@@ -16,9 +16,11 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 namespace DaanV2.Config {
-    ///DOLATER <summary>Add Description</summary>
+    /// <summary>The interface responsible for setting default values when the config file is missing
+    /// <para>See: Documentation/INewConfig.md</para>
+    /// </summary>
     public interface INewConfig {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Fills this object with the given default values for the config save file</summary>
         void SetNewInformation();
     }
 }

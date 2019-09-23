@@ -27,7 +27,7 @@ namespace DaanV2.Config {
         /// <summary>The extension the config files will receive</summary>
         public static String ConfigExtension { get; set; }
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>The name of the serializing factory</summary>
         public static String ConfigSerializerName { get; set; }
     }
 }

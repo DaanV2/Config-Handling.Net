@@ -48,7 +48,7 @@ namespace DaanV2.Config {
                 ConfigFolder = AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\') + ConfigFolder;
             }
 
-            //Make sure it ends with //
+            //Make sure it ends with '\'
             if (!ConfigOptions.ConfigFolder.EndsWith("\\")) {
                 ConfigOptions.ConfigFolder += "\\";
             }

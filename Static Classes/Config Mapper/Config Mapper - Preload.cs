@@ -19,15 +19,25 @@ using System.Reflection;
 
 namespace DaanV2.Config {
     public static partial class ConfigMapper {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Pre initializes the values inside of this class</summary>
+        /// <param name="LoadConfigObjects">Marks if it should load the given objects from the loaded assemblies</param>
         /// <exception cref="AppDomainUnloadedException" />
+        /// <exception cref="AmbiguousMatchException" />
+        /// <exception cref="ArgumentException" />
+        /// <exception cref="ArgumentNullException" />
+        /// <exception cref="FileNotFoundException" />
+        /// <exception cref="NotSupportedException" />
         /// <exception cref="OverflowException" />
-        public static void Preload() {
+        /// <exception cref="TypeLoadException" />
+        public static void Preload(Boolean LoadConfigObjects = true) {
             ConfigLoader.Preload();
-            Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
-            for (Int32 I = 0; I < Assemblies.Length; I++) {
-                Preload(Assemblies[I]);
+            if (LoadConfigObjects){
+                Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
+
+                for (Int32 I = 0; I < Assemblies.Length; I++) {
+                    Preload(Assemblies[I]);
+                }
             }
         }
 
