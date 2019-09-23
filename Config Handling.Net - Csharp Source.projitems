@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>7be2b6ac-c642-4c82-9bb6-49c280b21a6d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>DaanV2.Config</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\Base Config\Base Config - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\Base Config\Base Config - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\Base Config\Base Config - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\Config Attribute\Config Attribute - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\Config Attribute\Config Attribute - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - Get and Set.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - Override.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - INewConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Item Config\General Item Config - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Item Config\General Item Config - Override.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Item Config\General Item Config - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\INewConfig\INewConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer Factory\JSON Serializer Factory - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer\JSON Serializer - IConfigSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Xml Serializer Factory\Xml Serializer Factory - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Xml Serializer Factory\Xml Serializer Factory - IConfigSerializerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Xml Serializer\Xml Serializer - IConfigDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interface\IConfigDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interface\IConfigSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Interface\IConfigSerializerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Xml Serializer\Xml Serializer - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Xml Serializer\Xml Serializer - IConfigSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer\JSON Serializer - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer\JSON Serializer - Variable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer\JSON Serializer - IConfigDeserializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer Factory\JSON Serializer Factory - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer Factory\JSON Serializer Factory - IConfigSerializerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Factory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Preload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Variable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Load.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Save.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Function.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Get and Set.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Preload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Variable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Save and Load.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Initialize.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Preload.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Save and Load.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Abstract Classes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Serialization\Interface\" />
+  </ItemGroup>
+</Project>

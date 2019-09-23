@@ -1,0 +1,105 @@
+﻿/*ISC License
+
+Copyright(c) 2019, Daan Verstraten, daanverstraten@hotmail.com
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS.IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
+using System;
+using System.Reflection;
+
+namespace DaanV2.Config {
+    public static partial class ConfigMapper {
+
+        /// <summary>Remove the config from the internal list</summary>
+        /// <param name="T">DOLATER FILL IN</param>
+        /// <exception cref="ArgumentNullException" />
+        public static void Remove(Type T) {
+            ConfigMapper._WaitHandle.WaitOne();
+            if (ConfigMapper.Configs.ContainsKey(T)) {
+                ConfigMapper._WaitHandle.Set();
+                ConfigMapper.Configs.Remove(T);
+            }
+            else {
+                ConfigMapper._WaitHandle.Set();
+            }
+        }
+
+        /// <summary>Remove the config from the internal list</summary>
+        /// <param name="T">DOLATER FILL IN</param>
+        /// <exception cref="ArgumentNullException" />
+        public static void Remove(Object T) {
+            ConfigMapper._WaitHandle.WaitOne();
+            if (ConfigMapper.Configs.ContainsKey(T.GetType())) {
+                ConfigMapper._WaitHandle.Set();
+                ConfigMapper.Configs.Remove(T.GetType());
+            }
+            else {
+                ConfigMapper._WaitHandle.Set();
+            }
+        }
+
+        /// <summary>Clears the complete internal list</summary>
+        /// <param name="SaveConfigs">DOLATER FILL IN</param>
+        public static void Clear(Boolean SaveConfigs = false) {
+            if (SaveConfigs) {
+                ConfigMapper.SaveAll();
+            }
+
+            ConfigMapper._WaitHandle.WaitOne();
+            ConfigMapper.Configs.Clear();
+            ConfigMapper._WaitHandle.Set();
+        }
+
+        /// <summary>Returns the name of the given object needed for the process. also checks if the object has the needed attributes</summary>
+        /// <param name="T">DOLATER FILL IN</param>
+        /// <returns></returns>
+        /// <exception cref="AmbiguousMatchException" />
+        /// <exception cref="ArgumentException" />
+        /// <exception cref="ArgumentNullException" />
+        /// <exception cref="NotSupportedException" />
+        /// <exception cref="TypeLoadException" />
+        public static String GetName(Type T) {
+            if (T == null) {
+                throw new ArgumentNullException(nameof(T));
+            }
+
+            SerializableAttribute Sa = (SerializableAttribute)Attribute.GetCustomAttribute(T, typeof(SerializableAttribute));
+            ConfigAttribute Ca = (ConfigAttribute)Attribute.GetCustomAttribute(T, typeof(ConfigAttribute));
+
+            if (Sa == null) {
+                throw new ArgumentException($"Type {T.Name} must implement attribute: SerializableAttribute");
+            }
+
+            String Out = String.Empty;
+
+            if (Ca == null || (Ca.SubFolder == null && Ca.Name == null)) {
+                return T.Name;
+            }
+
+            //If category is filled in then make put category in Out
+            if (!(Ca.SubFolder == null || Ca.SubFolder == String.Empty)) {
+                Out = Ca.SubFolder;
+
+                //Make sure out is ending with \
+                if (!Out.EndsWith("\\")) {
+                    Out += "\\";
+                }
+            }
+
+            //Return Out + Name
+            return Ca.Name == null || Ca.Name == String.Empty ?
+                Out + T.Name :
+                Out + Ca.Name;
+        }
+    }
+}

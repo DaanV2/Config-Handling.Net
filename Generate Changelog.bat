@@ -1,0 +1,1 @@
+git log --name-only --compact-summary --stat --since="10 day ago" --format="  %%n## %%s (%%h)  " -- . ':(exclude)*CHANGELOG*' > CHANGELOG.md
