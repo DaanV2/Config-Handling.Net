@@ -18,7 +18,7 @@ using System;
 using System.Runtime.Serialization.Json;
 
 namespace DaanV2.Config.Serialization {
-    ///DOLATER <summary> add description for class: JSONSerializer</summary>
+    /// <summary>The class responsible for forming the contract between the interface and the json serializer</summary>
 	[Serializable]
     public partial class JSONSerializer<T> {
         /// <summary>Creates a new instance of <see cref="JSONSerializer"/></summary>
@@ -26,8 +26,8 @@ namespace DaanV2.Config.Serialization {
             this._JsonSerializer = new DataContractJsonSerializer(typeof(T));
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="ForceType"></param>
+        /// <summary>Creates a new instance of <see cref="JSONSerializer"/></summary>
+        /// <param name="ForceType">Force the serializer to use this type instead of its generic type</param>
         public JSONSerializer(Type ForceType) {
             this._JsonSerializer = new DataContractJsonSerializer(ForceType);
         }

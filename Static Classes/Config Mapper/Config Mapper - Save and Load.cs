@@ -15,6 +15,10 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Security;
 
 namespace DaanV2.Config {
     public static partial class ConfigMapper {
@@ -34,7 +38,7 @@ namespace DaanV2.Config {
         /// <exception cref="MissingMethodException" />
         /// <exception cref="NotSupportedException" />
         /// <exception cref="PathTooLongException" />
-        /// <exception cref="System.Security.SecurityException" />
+        /// <exception cref="SecurityException" />
         /// <exception cref="TypeLoadException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="UnauthorizedAccessException" />
@@ -42,9 +46,7 @@ namespace DaanV2.Config {
             String Name = GetName(T);
             Object Temp = ConfigLoader.LoadConfig(T, Name);
 
-            ConfigMapper._WaitHandle.WaitOne();
             ConfigMapper.Configs[T] = Temp;
-            ConfigMapper._WaitHandle.Set();
         }
 
         /// <summary>Saves the given type into a file</summary>
@@ -59,17 +61,12 @@ namespace DaanV2.Config {
         /// <exception cref="InvalidOperationException" />
         /// <exception cref="NotSupportedException" />
         /// <exception cref="PathTooLongException" />
-        /// <exception cref="System.Security.SecurityException" />
+        /// <exception cref="SecurityException" />
         /// <exception cref="UnauthorizedAccessException" />
         public static void Save(Type T) {
-            ConfigMapper._WaitHandle.WaitOne();
 
             if (ConfigMapper.Configs.ContainsKey(T)) {
-                ConfigMapper._WaitHandle.Set();
                 ConfigLoader.SaveConfig(Configs[T], GetName(T));
-            }
-            else {
-                ConfigMapper._WaitHandle.Set();
             }
         }
 
@@ -84,28 +81,21 @@ namespace DaanV2.Config {
         /// <exception cref="InvalidOperationException" />
         /// <exception cref="NotSupportedException" />
         /// <exception cref="PathTooLongException" />
-        /// <exception cref="System.Security.SecurityException" />
+        /// <exception cref="SecurityException" />
         /// <exception cref="UnauthorizedAccessException" />
         public static void SaveAll() {
-            ConfigMapper._WaitHandle.WaitOne();
             Type[] Keys = new Type[ConfigMapper.Configs.Count];
             ConfigMapper.Configs.Keys.CopyTo(Keys, 0);
-            ConfigMapper._WaitHandle.Set();
             Type Key;
             Object Item;
 
             for (Int32 I = 0; I < Keys.Length; I++) {
                 Key = Keys[I];
 
-                ConfigMapper._WaitHandle.WaitOne();
                 if (ConfigMapper.Configs.ContainsKey(Key)) {
                     Item = ConfigMapper.Configs[Key];
-                    ConfigMapper._WaitHandle.Set();
 
                     ConfigLoader.SaveConfig(Item, GetName(Key));
-                }
-                else {
-                    ConfigMapper._WaitHandle.Set();
                 }
             }
         }

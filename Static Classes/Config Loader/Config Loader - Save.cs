@@ -21,8 +21,8 @@ using System.Threading;
 
 namespace DaanV2.Config {
     public static partial class ConfigLoader {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Config">The object to save</param>
+        /// <summary>Save the given object into a file</summary>
+        /// <param name="ConfigObject">The object to save</param>
         /// <param name="Filename">The filename the objects should get</param>
         /// <exception cref="ArgumentException" />
         /// <exception cref="ArgumentNullException" />
@@ -36,22 +36,29 @@ namespace DaanV2.Config {
         /// <exception cref="UnauthorizedAccessException" />
         /// <exception cref="System.Security.SecurityException" />
         public static void SaveConfig(Object ConfigObject, String Filename) {
-            Monitor.Enter(ConfigObject);
+            //Get file info on the file to save to
             FileInfo FI = new FileInfo(ConfigOptions.ConfigFolder + Filename + ConfigOptions.ConfigExtension);
+            //Check parent directory
             DirectoryInfo DI = FI.Directory;
-            if (!DI.Exists) {
-                DI.Create();
-            }
 
+            //Create if missing
+            if (!DI.Exists) DI.Create();
+
+            //Setup
             IConfigSerializer<Object> serializer = null;
             FileStream writer = null;
 
 #if !DEBUG
             try{
 #endif
+            //Assign serializer and stream
             serializer = ConfigLoader._SerializerFactory.GetSerializer(ConfigObject.GetType());
             writer = new FileStream(FI.FullName, FileMode.Create);
+            
+            //Serialize object
             serializer.Serialize(ConfigObject, writer);
+
+            //Flush and close
             writer.Flush();
             writer.Close();
 #if !DEBUG
@@ -63,8 +70,6 @@ namespace DaanV2.Config {
                 if (writer != null) writer.Close();
             }
 #endif
-
-            Monitor.Exit(ConfigObject);
         }
     }
 }

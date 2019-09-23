@@ -18,7 +18,7 @@ using System.Runtime.Serialization.Json;
 
 namespace DaanV2.Config.Serialization {
     public partial class JSONSerializer<T> {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>The json serializer that serialize the given object</summary>
         private DataContractJsonSerializer _JsonSerializer;
     }
 }

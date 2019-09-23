@@ -17,31 +17,32 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
 namespace DaanV2.Config.Serialization {
-    ///DOLATER <summary> add description for interface: IConfigSerializerFactory</summary>
+    /// <summary>A interface that is responisble for dictating how Serializing factory should behave</summary>
     public interface IConfigSerializerFactory {
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="ForType"></param>
-        /// <returns></returns>
-        IConfigSerializer<TIn> GetSerializer<TIn>();
-
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="ForType"></param>
-        /// <returns></returns>
-        IConfigSerializer<Object> GetSerializer(Type ForType);
-
-
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
+        /// <typeparam name="TOut">The object type to deserialize</typeparam>
         /// <returns></returns>
         IConfigDeserializer<TOut> GetDeserializer<TOut>();
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="ForType"></param>
+        /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
+        /// <param name="ForType">The object type to serialize</param>
         /// <returns></returns>
         IConfigDeserializer<Object> GetDeserializer(Type ForType);
 
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
+        /// <typeparam name="TIn">The object type to serialize</typeparam>
+        /// <returns></returns>
+        IConfigSerializer<TIn> GetSerializer<TIn>();
+
+        /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
+        /// <param name="ForType">The object type to serialize</param>
+        /// <returns></returns>
+        IConfigSerializer<Object> GetSerializer(Type ForType);
+
+        
+        /// <summary>The name used for identifying this factory</summary>
         String Name { get; }
     }
 }

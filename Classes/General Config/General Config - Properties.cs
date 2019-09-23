@@ -15,15 +15,16 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 namespace DaanV2.Config {
     public partial class GeneralConfig {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>The collection of items stored in class</summary>       
         [XmlIgnore, IgnoreDataMember]
-        public Dictionary<String, String> Items { get; set; }
+        public ConcurrentDictionary<String, String> Items { get; set; }
 
         /// <summary>Do not use this property, its used to serialize/deserialize the dictionary</summary>
         [XmlArray("Items"), XmlArrayItem("Item"), DataMember(Name = "Items")]

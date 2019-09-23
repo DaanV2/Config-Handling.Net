@@ -14,18 +14,17 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
+using DaanV2.Config.Serialization;
 using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Reflection;
-using System.Threading;
 
 namespace DaanV2.Config {
-    ///DOLATER <summary>Add Description</summary>
+    /// <summary>The static class responsible for serializing/deserializing object into the files</summary>
     public static partial class ConfigLoader {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Initializes the instance of <see cref="ConfigLoader"/></summary>
         static ConfigLoader() {
-            ConfigLoader._Factories = new Dictionary<String, Serialization.IConfigSerializerFactory>();
-            ConfigLoader._WaitHandle = new EventWaitHandle(true, EventResetMode.AutoReset);
+            ConfigLoader._Factories = new ConcurrentDictionary<String, IConfigSerializerFactory>();
 
             Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
 

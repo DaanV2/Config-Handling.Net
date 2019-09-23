@@ -18,7 +18,7 @@ using System;
 
 namespace DaanV2.Config {
     public static partial class ConfigOptions {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Initializes a new instance of <see cref="ConfigOptions"/></summary>
         static ConfigOptions() {
             ConfigOptions.ConfigFolder = AppDomain.CurrentDomain.BaseDirectory + "configs\\";
             ConfigOptions.ConfigExtension = ".config";

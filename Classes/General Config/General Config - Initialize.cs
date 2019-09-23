@@ -14,7 +14,7 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Runtime.Serialization;
 
 namespace DaanV2.Config {
@@ -23,7 +23,7 @@ namespace DaanV2.Config {
     public partial class GeneralConfig {
         /// <summary>Creates a new instance of <see cref="GeneralConfig"/></summary>
         public GeneralConfig() {
-            this.Items = new Dictionary<String, String>();
+            this.Items = new ConcurrentDictionary<String, String>();
         }
     }
 }

@@ -16,18 +16,15 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using DaanV2.Config.Serialization;
 using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Threading;
 
 namespace DaanV2.Config {
     public static partial class ConfigLoader {
-        ///DOLATER <summary>Add Description</summary>
-        private static EventWaitHandle _WaitHandle;
-
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>The current serializing factory that is being used</summary>
         private static IConfigSerializerFactory _SerializerFactory;
 
-        ///DOLATER <summary>Add Description</summary>
-        private static Dictionary<String, IConfigSerializerFactory> _Factories;
+        /// <summary>The internal dictionary of factories</summary>
+        private static ConcurrentDictionary<String, IConfigSerializerFactory> _Factories;
     }
 }

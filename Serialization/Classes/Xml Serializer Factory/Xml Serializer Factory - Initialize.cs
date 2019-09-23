@@ -17,8 +17,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
 namespace DaanV2.Config.Serialization {
-    ///DOLATER <summary> add description for class: XmlSerializerFactory</summary>
-	[Serializable]
+    /// <summary>The class that is reponsible for creating serializers/deserializers</summary>
     public partial class XmlSerializerFactory {
         /// <summary>Creates a new instance of <see cref="XmlSerializerFactory"/></summary>
         public XmlSerializerFactory() {

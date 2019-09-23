@@ -17,38 +17,37 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
 namespace DaanV2.Config.Serialization {
-    public partial class JSONSerializerFactory : DaanV2.Config.Serialization.IConfigSerializerFactory {
-        ///DOLATER <summary>Add Description</summary>
+    public partial class JSONSerializerFactory : IConfigSerializerFactory {
+        /// <summary>The name of this Json serializing factory</summary>
         private readonly String _Name = "json";
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>The name of this Json serializing factory</summary>
         public String Name => this._Name;
 
-
-        ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="TOut"></typeparam>
+        /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
+        /// <typeparam name="TOut">The object type to deserialize</typeparam>
         /// <returns></returns>
         public IConfigDeserializer<TOut> GetDeserializer<TOut>() {
             return new JSONSerializer<TOut>();
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="T"></param>
+        /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
+        /// <param name="ForType">The object type to serialize</param>
         /// <returns></returns>
-        public IConfigDeserializer<Object> GetDeserializer(Type T) {
-            return new JSONSerializer<Object>(T);
+        public IConfigDeserializer<Object> GetDeserializer(Type ForType) {
+            return new JSONSerializer<Object>(ForType);
         }
 
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <typeparam name="TIn"></typeparam>
+        /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
+        /// <typeparam name="TIn">The object type to serialize</typeparam>
         /// <returns></returns>
         public IConfigSerializer<TIn> GetSerializer<TIn>() {
             return new JSONSerializer<TIn>();
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="ForType"></param>
+        /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
+        /// <param name="ForType">The object type to serialize</param>
         /// <returns></returns>
         public IConfigSerializer<Object> GetSerializer(Type ForType) {
             return new JSONSerializer<Object>(ForType);

@@ -15,12 +15,13 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 namespace DaanV2.Config {
     public static partial class ConfigMapper {
         /// <summary>Gets or sets the dataset of types to configs</summary>
-        public static Dictionary<Type, Object> Configs { get; set; }
+        public static ConcurrentDictionary<Type, Object> Configs { get; set; }
 
         /// <summary>Returns the amount of objects currently saved in memory</summary>
         public static Int32 Count => Configs.Count;

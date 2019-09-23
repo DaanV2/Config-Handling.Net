@@ -24,13 +24,9 @@ namespace DaanV2.Config {
         /// <param name="T">DOLATER FILL IN</param>
         /// <exception cref="ArgumentNullException" />
         public static void Remove(Type T) {
-            ConfigMapper._WaitHandle.WaitOne();
             if (ConfigMapper.Configs.ContainsKey(T)) {
-                ConfigMapper._WaitHandle.Set();
-                ConfigMapper.Configs.Remove(T);
-            }
-            else {
-                ConfigMapper._WaitHandle.Set();
+                Object Out = null;
+                ConfigMapper.Configs.TryRemove(T, out Out);
             }
         }
 
@@ -38,13 +34,11 @@ namespace DaanV2.Config {
         /// <param name="T">DOLATER FILL IN</param>
         /// <exception cref="ArgumentNullException" />
         public static void Remove(Object T) {
-            ConfigMapper._WaitHandle.WaitOne();
             if (ConfigMapper.Configs.ContainsKey(T.GetType())) {
-                ConfigMapper._WaitHandle.Set();
-                ConfigMapper.Configs.Remove(T.GetType());
+                Object Out = null;
+                ConfigMapper.Configs.TryRemove(T.GetType(), out Out);
             }
             else {
-                ConfigMapper._WaitHandle.Set();
             }
         }
 
@@ -55,13 +49,11 @@ namespace DaanV2.Config {
                 ConfigMapper.SaveAll();
             }
 
-            ConfigMapper._WaitHandle.WaitOne();
             ConfigMapper.Configs.Clear();
-            ConfigMapper._WaitHandle.Set();
         }
 
         /// <summary>Returns the name of the given object needed for the process. also checks if the object has the needed attributes</summary>
-        /// <param name="T">DOLATER FILL IN</param>
+        /// <param name="T">The type to retrieve the name of</param>
         /// <returns></returns>
         /// <exception cref="AmbiguousMatchException" />
         /// <exception cref="ArgumentException" />
@@ -73,13 +65,8 @@ namespace DaanV2.Config {
                 throw new ArgumentNullException(nameof(T));
             }
 
-            SerializableAttribute Sa = (SerializableAttribute)Attribute.GetCustomAttribute(T, typeof(SerializableAttribute));
+            //Retrieve attributes
             ConfigAttribute Ca = (ConfigAttribute)Attribute.GetCustomAttribute(T, typeof(ConfigAttribute));
-
-            if (Sa == null) {
-                throw new ArgumentException($"Type {T.Name} must implement attribute: SerializableAttribute");
-            }
-
             String Out = String.Empty;
 
             if (Ca == null || (Ca.SubFolder == null && Ca.Name == null)) {

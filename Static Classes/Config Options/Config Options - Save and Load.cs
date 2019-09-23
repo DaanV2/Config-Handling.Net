@@ -21,6 +21,7 @@ namespace DaanV2.Config {
     public static partial class ConfigOptions {
         /// <summary>Save this class into the config.ini file</summary>
         public static void Save() {
+            //Write the config file
             StreamWriter writer = new StreamWriter(ConfigOptions.FilepathOptions, false);
             writer.WriteLine($"Config Extension={ConfigOptions.ConfigExtension}");
             writer.WriteLine($"Config Folder={ConfigOptions.ConfigFolder.Replace(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\'), String.Empty)}");
@@ -30,7 +31,10 @@ namespace DaanV2.Config {
 
         /// <summary>Loads the config.ini file</summary>
         public static void Load() {
+            //Retrieve all lines from the config
             String[] Lines = File.ReadAllLines(ConfigOptions.FilepathOptions);
+
+            //Loop through all lines
             foreach (String L in Lines) {
                 if (L.StartsWith("Config Extension=")) {
                     ConfigOptions.ConfigExtension = L.Remove(0, 17).Trim();

@@ -48,7 +48,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Get and Set.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Preload.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Variable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Save and Load.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Initialize.cs" />

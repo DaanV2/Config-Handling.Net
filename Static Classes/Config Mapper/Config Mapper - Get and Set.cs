@@ -15,6 +15,10 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Security;
 
 namespace DaanV2.Config {
     public static partial class ConfigMapper {
@@ -24,9 +28,7 @@ namespace DaanV2.Config {
         /// <exception cref="ArgumentException" />
         /// <exception cref="ArgumentNullException" />
         public static void Set(Type Key, Object ConfigObject) {
-            ConfigMapper._WaitHandle.WaitOne();
             ConfigMapper.Configs[Key] = ConfigObject;
-            ConfigMapper._WaitHandle.Set();
         }
 
         /// <summary>Sets the given config</summary>
@@ -36,9 +38,7 @@ namespace DaanV2.Config {
         public static void Set(Object ConfigObject) {
             Type T = ConfigObject.GetType();
 
-            ConfigMapper._WaitHandle.WaitOne();
             ConfigMapper.Configs[T] = ConfigObject;
-            ConfigMapper._WaitHandle.Set();
         }
 
         /// <summary>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</summary>
@@ -58,19 +58,13 @@ namespace DaanV2.Config {
         /// <exception cref="MissingMethodException" />
         /// <exception cref="NotSupportedException" />
         /// <exception cref="PathTooLongException" />
-        /// <exception cref="System.Security.SecurityException" />
+        /// <exception cref="SecurityException" />
         /// <exception cref="TypeLoadException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="UnauthorizedAccessException" />
         public static Object Get(Type T) {
-            ConfigMapper._WaitHandle.WaitOne();
-
             if (!ConfigMapper.Configs.ContainsKey(T)) {
-                ConfigMapper._WaitHandle.Set();
                 Load(T);
-            }
-            else {
-                ConfigMapper._WaitHandle.Set();
             }
 
             return ConfigMapper.Configs[T];
@@ -93,21 +87,15 @@ namespace DaanV2.Config {
         /// <exception cref="MissingMethodException" />
         /// <exception cref="NotSupportedException" />
         /// <exception cref="PathTooLongException" />
-        /// <exception cref="System.Security.SecurityException" />
+        /// <exception cref="SecurityException" />
         /// <exception cref="TypeLoadException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="UnauthorizedAccessException" />
         public static T Get<T>() {
             Type Temp = typeof(T);
 
-            ConfigMapper._WaitHandle.WaitOne();
-
             if (!ConfigMapper.Configs.ContainsKey(Temp)) {
-                ConfigMapper._WaitHandle.Set();
                 Load(Temp);
-            }
-            else {
-                ConfigMapper._WaitHandle.Set();
             }
 
             return (T)ConfigMapper.Configs[Temp];

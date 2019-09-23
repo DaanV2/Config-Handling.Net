@@ -18,9 +18,9 @@ using System.IO;
 
 namespace DaanV2.Config.Serialization {
     public partial class JSONSerializer<T> : IConfigSerializer<T> {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="O"></param>
-        /// <param name="Writer"></param>
+        /// <summary>Serializes the given object into the given stream</summary>
+        /// <param name="O">The given object to serialize</param>
+        /// <param name="Writer">The given stream to write in</param>
         public void Serialize(T O, Stream Writer) {
             this._JsonSerializer.WriteObject(Writer, O);
         }

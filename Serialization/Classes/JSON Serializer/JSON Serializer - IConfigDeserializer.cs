@@ -18,8 +18,8 @@ using System.IO;
 
 namespace DaanV2.Config.Serialization {
     public partial class JSONSerializer<T> : IConfigDeserializer<T> {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Reader"></param>
+        /// <summary>Deserializes the given stream into the specified object</summary>
+        /// <param name="Reader">The stream to reader from</param>
         /// <returns></returns>
         public T Deserialize(Stream Reader) {
             return (T)this._JsonSerializer.ReadObject(Reader);

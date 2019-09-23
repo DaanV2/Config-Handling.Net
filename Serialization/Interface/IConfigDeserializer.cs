@@ -18,10 +18,11 @@ using System.IO;
 
 namespace DaanV2.Config.Serialization {
 
-    ///DOLATER <summary>Add Description</summary>
+    /// <summary>The interface responsible for defining how a serializer should behave</summary>
     public interface IConfigDeserializer<TOut> {
-        /// <param name="O"></param>
-        /// <param name="Filepath"></param>
+        /// <summary>Deserializes the given stream into the specified stream</summary>
+        /// <param name="Reader">The stream to deserialize</param>
+        /// <returns></returns>
         TOut Deserialize(Stream Reader);
     }
 }

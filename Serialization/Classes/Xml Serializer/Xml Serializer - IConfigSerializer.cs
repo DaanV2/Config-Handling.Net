@@ -18,8 +18,8 @@ using System.IO;
 
 namespace DaanV2.Config.Serialization {
     public partial class XmlSerializer<T> : IConfigDeserializer<T> {
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Filepath"></param>
+        /// <summary>Deserializes the given stream into the specified object type</summary>
+        /// <param name="Reader">The stream to read from</param>
         /// <returns></returns>
         public new T Deserialize(Stream Reader) {
             return (T)base.Deserialize(Reader);

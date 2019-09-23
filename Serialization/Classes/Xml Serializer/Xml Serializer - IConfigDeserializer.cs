@@ -18,10 +18,9 @@ using System.IO;
 
 namespace DaanV2.Config.Serialization {
     public partial class XmlSerializer<T> : IConfigSerializer<T> {
-
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="O"></param>
-        /// <param name="Writer"></param>
+        /// <summary>Serializes the given object into the given stream</summary>
+        /// <param name="O">The object to serialize</param>
+        /// <param name="Writer">The stream to write to</param>
         public void Serialize(T O, Stream Writer) {
             base.Serialize(Writer, O);
         }

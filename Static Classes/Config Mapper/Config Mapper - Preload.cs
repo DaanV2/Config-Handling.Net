@@ -15,6 +15,7 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.IO;
 using System.Reflection;
 
 namespace DaanV2.Config {
@@ -30,9 +31,11 @@ namespace DaanV2.Config {
         /// <exception cref="OverflowException" />
         /// <exception cref="TypeLoadException" />
         public static void Preload(Boolean LoadConfigObjects = true) {
+            //Preload the config loader
             ConfigLoader.Preload();
 
             if (LoadConfigObjects){
+                //Load config objects from assemblies
                 Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
                 for (Int32 I = 0; I < Assemblies.Length; I++) {
@@ -53,6 +56,7 @@ namespace DaanV2.Config {
         public static void Preload(Assembly assembly) {
             Type[] Types = assembly.GetExportedTypes();
 
+            //Loop through types looking for the config
             for (Int32 I = 0; I < Types.Length; I++) {
                 if (Types[I].GetCustomAttribute(typeof(ConfigAttribute)) != null && Types[I].IsClass) {
                     ConfigMapper.Get(Types[I]);

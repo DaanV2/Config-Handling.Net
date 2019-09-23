@@ -17,10 +17,10 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System.IO;
 
 namespace DaanV2.Config.Serialization {
-    ///DOLATER <summary>Add Description</summary>
+    /// <summary>The interface responsible for telling how serializers should behave</summary>
     public interface IConfigSerializer<TIn> {
-        /// <param name="O"></param>
-        /// <param name="Writer"></param>
+        /// <param name="O">The object to serialize</param>
+        /// <param name="Writer">The stream to write to</param>
         void Serialize(TIn O, Stream Writer);
     }
 }

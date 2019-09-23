@@ -38,10 +38,10 @@ namespace DaanV2.Config {
             return this.Items[Key];
         }
 
-        ///DOLATER <summary>Add Description</summary>
-        /// <param name="Key"></param>
-        /// <param name="IfMissing"></param>
-        /// <returns></returns>
+        /// <summary>Returns a string value that has been stored in this object under the given key</summary>
+        /// <param name="Key">The key to look for</param>
+        /// <param name="IfMissing">The value to fill in when the given item is not present</param>
+        /// <returns>an saved item</returns>
         public String Get(String Key, String IfMissing) {
             if (!this.Items.ContainsKey(Key)) {
                 this.Items[Key] = IfMissing;

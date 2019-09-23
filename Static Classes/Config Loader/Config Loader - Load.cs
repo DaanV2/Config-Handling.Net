@@ -19,10 +19,12 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security;
+using System.Threading.Tasks;
 
 namespace DaanV2.Config {
     public static partial class ConfigLoader {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Loads the specified object from file storage or creates a new instance</summary>
         /// <param name="T">The type of the object to retrieve</param>
         /// <param name="Filename">the name of the config</param>
         /// <returns>A <see cref="Object"/> is returned</returns>
@@ -39,45 +41,54 @@ namespace DaanV2.Config {
         /// <exception cref="MissingMethodException" />
         /// <exception cref="NotSupportedException" />
         /// <exception cref="PathTooLongException" />
-        /// <exception cref="System.Security.SecurityException" />
+        /// <exception cref="SecurityException" />
         /// <exception cref="UnauthorizedAccessException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="TypeLoadException" />
         public static Object LoadConfig(Type T, String Filename) {
+            //Create the filepath of where the config file could be found
             String Filepath = ConfigOptions.ConfigFolder + Filename + ConfigOptions.ConfigExtension;
             Object Out = null;
 
+            //Check if file exists
             if (File.Exists(Filepath)) {
+                //Setup
                 IConfigDeserializer<Object> deserializer;
                 FileStream reader = null;
 #if !DEBUG
             try{
 #endif
+                //Create the deserializer and stream
                 deserializer = ConfigLoader._SerializerFactory.GetDeserializer(T);
                 reader = new FileStream(Filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
+                //Deserialize file into object
                 Out = deserializer.Deserialize(reader);
                 reader.Close();
 #if !DEBUG
             }
                 catch (Exception ex)
                 {
+                    //Close of the stream, write error report
                     if (reader != null) reader.Close();
                     File.Move(Filepath, Filepath + ".corrupt");
-                    File.WriteAllText(Filepath + ".corrupt.txt", ex.Message);
+                    File.WriteAllText(Filepath + ".corrupt.txt", ex.Message + "\r\n\r\n" + ex.StackTrace);
                 }
 #endif
             }
 
+            //Checks if object has not been succesfully been deserialized.
             if (Out == null) {
+                //Create new instance of the object
                 Out = Activator.CreateInstance(T);
 
+                //Check if the object has the given object
                 if (Out.GetType().GetInterface(nameof(INewConfig)) != null) {
                     INewConfig Temp = (INewConfig)Out;
                     Temp.SetNewInformation();
                 }
 
-#if Debug
+#if !DEBUG
                 Task.Run(() => SaveConfig(Out, Filename));
 #else
                 SaveConfig(Out, Filename);

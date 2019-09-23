@@ -15,14 +15,14 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 
 namespace DaanV2.Config {
+    /// <summary>The class responsible for presistanting config objects as well as the loading and saving.</summary>
     public static partial class ConfigMapper {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Creates a new instance of <see cref="ConfigMapper"/></summary>
         static ConfigMapper() {
-            ConfigMapper._WaitHandle = new System.Threading.EventWaitHandle(true, System.Threading.EventResetMode.AutoReset);
-            ConfigMapper.Configs = new Dictionary<Type, Object>();
+            ConfigMapper.Configs = new ConcurrentDictionary<Type, Object>();
         }
     }
 }
