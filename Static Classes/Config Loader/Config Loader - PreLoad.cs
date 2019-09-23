@@ -17,7 +17,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
 namespace DaanV2.Config {
     public static partial class ConfigLoader {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Preloads and intializes this class factories</summary>
         public static void Preload() {
             ConfigOptions.Preload();
             System.Threading.Thread.Sleep(10);
