@@ -16,20 +16,21 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Runtime.Serialization.Json;
+using System.Text.Json;
 
 namespace DaanV2.Config.Serialization {
     /// <summary>The class responsible for forming the contract between the interface and the json serializer</summary>
 	[Serializable]
-    public partial class JSONSerializer<T> {
+    public partial class JSONSerializer<T> : BaseConfig<JsonSerializerOptions> {
         /// <summary>Creates a new instance of <see cref="JSONSerializer"/></summary>
         public JSONSerializer() {
-            this._JsonSerializer = new DataContractJsonSerializer(typeof(T));
+            this._ForType = typeof(T);
         }
 
         /// <summary>Creates a new instance of <see cref="JSONSerializer"/></summary>
         /// <param name="ForceType">Force the serializer to use this type instead of its generic type</param>
         public JSONSerializer(Type ForceType) {
-            this._JsonSerializer = new DataContractJsonSerializer(ForceType);
+            this._ForType = ForceType;
         }
     }
 }
