@@ -14,7 +14,15 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
+using System;
 using System.IO;
+using System.Threading.Tasks;
+
+#if NETCORE
+using System.Text.Json;
+#else
+using System.Runtime.Serialization.Json;
+#endif
 
 namespace DaanV2.Config.Serialization {
     public partial class JSONSerializer<T> : IConfigDeserializer<T> {
@@ -22,7 +30,17 @@ namespace DaanV2.Config.Serialization {
         /// <param name="Reader">The stream to reader from</param>
         /// <returns></returns>
         public T Deserialize(Stream Reader) {
-            return (T)this._JsonSerializer.ReadObject(Reader);
+#if NETCORE
+            JsonSerializerOptions Options = new JsonSerializerOptions();
+            ValueTask<Object> VTask = JsonSerializer.DeserializeAsync(Reader, this._ForType, Options);
+            VTask.AsTask().Wait();
+
+            return (T)VTask.Result;
+#else
+            DataContractJsonSerializer Deserializer = new DataContractJsonSerializer(this._ForType);
+            T Out = (T)Deserializer.ReadObject(Reader);
+            return Out;            
+#endif
         }
     }
 }

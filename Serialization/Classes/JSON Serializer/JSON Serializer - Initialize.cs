@@ -23,13 +23,13 @@ namespace DaanV2.Config.Serialization {
     public partial class JSONSerializer<T> {
         /// <summary>Creates a new instance of <see cref="JSONSerializer"/></summary>
         public JSONSerializer() {
-            this._JsonSerializer = new DataContractJsonSerializer(typeof(T));
+            this._ForType = typeof(T);
         }
 
         /// <summary>Creates a new instance of <see cref="JSONSerializer"/></summary>
         /// <param name="ForceType">Force the serializer to use this type instead of its generic type</param>
         public JSONSerializer(Type ForceType) {
-            this._JsonSerializer = new DataContractJsonSerializer(ForceType);
+            this._ForType = ForceType;
         }
     }
 }
