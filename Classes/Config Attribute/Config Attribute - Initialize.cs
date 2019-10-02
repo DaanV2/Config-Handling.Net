@@ -14,11 +14,12 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Runtime.Serialization;
 
 namespace DaanV2.Config {
     /// <summary>The attribute responsible for giving the system its information</summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Struct, AllowMultiple = false, Inherited = false)]
-    [Serializable]
+    [Serializable, DataContract]
     public partial class ConfigAttribute : Attribute {
         /// <summary>Creates a new instance of <see cref="ConfigAttribute"/></summary>
         public ConfigAttribute() : this(String.Empty, String.Empty, String.Empty) { }
