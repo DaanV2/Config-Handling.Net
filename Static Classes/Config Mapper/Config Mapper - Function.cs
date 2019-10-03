@@ -16,6 +16,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Reflection;
+using System.Text;
 
 namespace DaanV2.Config {
     public static partial class ConfigMapper {
@@ -70,7 +71,21 @@ namespace DaanV2.Config {
             String Out = String.Empty;
 
             if (Ca == null || (Ca.SubFolder == null && Ca.Name == null)) {
-                return T.Name;
+                if (T.IsGenericType) {
+                    Type[] Types = T.GetGenericArguments();
+                    StringBuilder B = new StringBuilder(Types.Length * 20 );
+                    B.Append(T.Name.Replace("`", "-"));
+
+                    for (int I = 0; I < Types.Length; I++) {
+                        B.Append("_");
+                        B.Append(GetName(Types[I]));
+                    }
+
+                    return B.ToString();
+                }
+                else {
+                    return T.Name;
+                }
             }
 
             //If category is filled in then make put category in Out
