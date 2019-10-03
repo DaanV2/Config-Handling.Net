@@ -41,7 +41,7 @@ namespace DaanV2.Config.Serialization {
         /// <returns></returns>
         IConfigSerializer<Object> GetSerializer(Type ForType);
 
-        
+
         /// <summary>The name used for identifying this factory</summary>
         String Name { get; }
     }

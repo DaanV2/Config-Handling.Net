@@ -34,7 +34,7 @@ namespace DaanV2.Config {
             //Preload the config loader
             ConfigLoader.Preload();
 
-            if (LoadConfigObjects){
+            if (LoadConfigObjects) {
                 //Load config objects from assemblies
                 Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
 

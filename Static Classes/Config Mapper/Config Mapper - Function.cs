@@ -73,10 +73,10 @@ namespace DaanV2.Config {
             if (Ca == null || (Ca.SubFolder == null && Ca.Name == null)) {
                 if (T.IsGenericType) {
                     Type[] Types = T.GetGenericArguments();
-                    StringBuilder B = new StringBuilder(Types.Length * 20 );
+                    StringBuilder B = new StringBuilder(Types.Length * 20);
                     B.Append(T.Name.Replace("`", "-"));
 
-                    for (int I = 0; I < Types.Length; I++) {
+                    for (Int32 I = 0; I < Types.Length; I++) {
                         B.Append("_");
                         B.Append(GetName(Types[I]));
                     }

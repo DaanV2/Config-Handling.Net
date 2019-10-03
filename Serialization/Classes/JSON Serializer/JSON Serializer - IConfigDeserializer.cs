@@ -39,7 +39,7 @@ namespace DaanV2.Config.Serialization {
 #else
             DataContractJsonSerializer Deserializer = new DataContractJsonSerializer(this._ForType);
             T Out = (T)Deserializer.ReadObject(Reader);
-            return Out;            
+            return Out;
 #endif
         }
     }

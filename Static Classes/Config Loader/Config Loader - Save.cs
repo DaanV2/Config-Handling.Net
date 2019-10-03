@@ -17,7 +17,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using DaanV2.Config.Serialization;
 using System;
 using System.IO;
-using System.Threading;
 
 namespace DaanV2.Config {
     public static partial class ConfigLoader {
@@ -42,7 +41,9 @@ namespace DaanV2.Config {
             DirectoryInfo DI = FI.Directory;
 
             //Create if missing
-            if (!DI.Exists) DI.Create();
+            if (!DI.Exists) {
+                DI.Create();
+            }
 
             //Setup
             IConfigSerializer<Object> serializer = null;
@@ -54,7 +55,7 @@ namespace DaanV2.Config {
             //Assign serializer and stream
             serializer = ConfigLoader._SerializerFactory.GetSerializer(ConfigObject.GetType());
             writer = new FileStream(FI.FullName, FileMode.Create);
-            
+
             //Serialize object
             serializer.Serialize(ConfigObject, writer);
 

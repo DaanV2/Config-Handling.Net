@@ -52,7 +52,7 @@ namespace DaanV2.Config {
         /// <summary>Switches the current serializing factory to the specified factory in config options</summary>
         public static void SwitchFactory() {
             String Key = ConfigOptions.ConfigSerializerName;
-            
+
             if (ConfigLoader._Factories.ContainsKey(Key)) {
                 ConfigLoader._SerializerFactory = ConfigLoader._Factories[Key];
             }
