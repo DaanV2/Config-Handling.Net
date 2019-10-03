@@ -18,7 +18,6 @@ using System.Runtime.Serialization;
 
 namespace DaanV2.Config {
     ///<summary>A class that handles the config property and making sure it sets the value</summary>
-    [Serializable, DataContract]
     public abstract partial class BaseConfig<ConfigType> {
         /// <summary>Creates a new instance of <see cref="BaseConfig"/></summary>
         public BaseConfig() {

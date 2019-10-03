@@ -30,15 +30,16 @@ namespace DaanV2.Config {
 
         /// <summary>Creates a new instance of <see cref="ConfigAttribute"/></summary>
         /// <param name="Name">The name of this config object</param>
-        /// <param name="Category">The catergory this config objects fall under, use \ for sub categories</param>
+        /// <param name="Category">The catergory this config objects fall under, use \ for sub categories,
+        /// if no subfolder is given category is copied to subfolder</param>
         /// <example>[ConfigAttribute("Example", "DaanV2\\General")]</example>
-        public ConfigAttribute(String Name, String Category) : this(Name, Category, String.Empty) { }
+        public ConfigAttribute(String Name, String Category) : this(Name, Category, Category) { }
 
         /// <summary>Creates a new instance of <see cref="ConfigAttribute"/></summary>
         /// <param name="Name">The name of this config object</param>
         /// <param name="Category">The catergory this config objects fall under, use \ for sub categories</param>
         /// <param name="SubFolder">The subfolder the config loader needs to save/load from. 
-        /// relative fromt he config folder, use \ to create even deeper folder structures</param>
+        /// relative fromt the config folder, use \ to create even deeper folder structures</param>
         public ConfigAttribute(String Name, String Category, String SubFolder) {
             this.Category = Category;
             this.Name = Name;
