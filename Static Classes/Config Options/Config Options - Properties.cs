@@ -19,15 +19,15 @@ using System;
 namespace DaanV2.Config {
     public static partial class ConfigOptions {
         /// <summary>The path where values of this class are saved</summary>
-        private static String FilepathOptions { get; set; }
+        private static String FilepathOptions { get; set; } //TODO Convert to full property
 
         /// <summary>The folder where the configs are stored or loaded from</summary>
-        public static String ConfigFolder { get; set; }
+        public static String ConfigFolder { get; set; } //TODO Convert to full property
 
         /// <summary>The extension the config files will receive</summary>
-        public static String ConfigExtension { get; set; }
+        public static String ConfigExtension { get; set; } //TODO Convert to full property
 
         /// <summary>The name of the serializing factory</summary>
-        public static String ConfigSerializerName { get; set; }
+        public static String ConfigSerializerName { get; set; } //TODO Convert to full property
     }
 }

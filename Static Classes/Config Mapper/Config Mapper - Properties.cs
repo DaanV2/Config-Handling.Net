@@ -20,7 +20,7 @@ using System.Collections.Concurrent;
 namespace DaanV2.Config {
     public static partial class ConfigMapper {
         /// <summary>Gets or sets the dataset of types to configs</summary>
-        public static ConcurrentDictionary<Type, Object> Configs { get; set; }
+        public static ConcurrentDictionary<Type, Object> Configs { get; set; } //TODO Convert to full property
 
         /// <summary>Returns the amount of objects currently saved in memory</summary>
         public static Int32 Count => Configs.Count;
