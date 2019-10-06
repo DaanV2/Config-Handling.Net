@@ -28,7 +28,7 @@ namespace DaanV2.Config.Serialization {
     public partial class JSONSerializer<T> : IConfigDeserializer<T> {
         /// <summary>Deserializes the given stream into the specified object</summary>
         /// <param name="Reader">The stream to reader from</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Add return description</returns>
         public T Deserialize(Stream Reader) {
 #if NETCORE
             JsonSerializerOptions Options = new JsonSerializerOptions();

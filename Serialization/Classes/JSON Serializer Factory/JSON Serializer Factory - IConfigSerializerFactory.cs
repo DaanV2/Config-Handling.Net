@@ -25,30 +25,30 @@ namespace DaanV2.Config.Serialization {
         public String Name => this._Name;
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
-        /// <typeparam name="TOut">The object type to deserialize</typeparam>
-        /// <returns></returns>
+        ///DOLATER fill in: <typeparam name="TOut">The object type to deserialize</typeparam>
+        ///DOLATER <returns>Add return description</returns>
         public IConfigDeserializer<TOut> GetDeserializer<TOut>() {
             return new JSONSerializer<TOut>();
         }
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Add return description</returns>
         public IConfigDeserializer<Object> GetDeserializer(Type ForType) {
             return new JSONSerializer<Object>(ForType);
         }
 
 
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
-        /// <typeparam name="TIn">The object type to serialize</typeparam>
-        /// <returns></returns>
+        ///DOLATER fill in: <typeparam name="TIn">The object type to serialize</typeparam>
+        ///DOLATER <returns>Add return description</returns>
         public IConfigSerializer<TIn> GetSerializer<TIn>() {
             return new JSONSerializer<TIn>();
         }
 
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
-        /// <returns></returns>
+        ///DOLATER <returns>Add return description</returns>
         public IConfigSerializer<Object> GetSerializer(Type ForType) {
             return new JSONSerializer<Object>(ForType);
         }

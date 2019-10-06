@@ -17,12 +17,12 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 namespace DaanV2.Config {
     public partial class ConfigAttribute {
         /// <summary>Gets or sets the name of this object</summary>
-        public System.String Name { get; set; } //TODO Convert to full property
+        public String Name { get; set; } //TODO Convert to full property
 
         /// <summary>Gets or sets the category of this object</summary>
-        public System.String Category { get; set; } //TODO Convert to full property
+        public String Category { get; set; } //TODO Convert to full property
 
         /// <summary>Gets or sets the subfolder for this config</summary>
-        public System.String SubFolder { get; set; } //TODO Convert to full property
+        public String SubFolder { get; set; } //TODO Convert to full property
     }
 }
