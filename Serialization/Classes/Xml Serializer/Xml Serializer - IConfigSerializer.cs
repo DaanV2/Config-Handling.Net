@@ -20,7 +20,7 @@ namespace DaanV2.Config.Serialization {
     public partial class XmlSerializer<T> : IConfigDeserializer<T> {
         /// <summary>Deserializes the given stream into the specified object type</summary>
         /// <param name="Reader">The stream to read from</param>
-        ///DOLATER <returns>Add return description</returns>
+        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
         public new T Deserialize(Stream Reader) {
             return (T)base.Deserialize(Reader);
         }

@@ -59,7 +59,7 @@ namespace DaanV2.Config {
         }
 
         /// <summary>checks if the config.ini file exists</summary>
-        ///DOLATER <returns>Add return description</returns>
+        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
         private static Boolean HasFile() {
             return File.Exists(ConfigOptions.FilepathOptions);
         }

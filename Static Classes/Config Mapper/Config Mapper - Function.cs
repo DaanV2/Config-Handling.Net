@@ -55,7 +55,7 @@ namespace DaanV2.Config {
 
         /// <summary>Returns the name of the given object needed for the process. also checks if the object has the needed attributes</summary>
         /// <param name="T">The type to retrieve the name of</param>
-        ///DOLATER <returns>Add return description</returns>
+        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
         /// <exception cref="AmbiguousMatchException" />
         /// <exception cref="ArgumentException" />
         /// <exception cref="ArgumentNullException" />
