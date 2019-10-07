@@ -26,14 +26,14 @@ namespace DaanV2.Config.Serialization {
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <typeparam name="TOut">The object type to deserialize</typeparam>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="IConfigDeserializer{TOut}"/></returns>
         public IConfigDeserializer<TOut> GetDeserializer<TOut>() {
             return new XmlSerializer<TOut>();
         }
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="IConfigDeserializer{Object}"/></returns>
         public IConfigDeserializer<Object> GetDeserializer(Type ForType) {
             return new XmlSerializer<Object>(ForType);
         }
@@ -41,14 +41,14 @@ namespace DaanV2.Config.Serialization {
 
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
         /// <typeparam name="TIn">The object type to serialize</typeparam>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="IConfigSerializer{TIn}"/></returns>
         public IConfigSerializer<TIn> GetSerializer<TIn>() {
             return new XmlSerializer<TIn>();
         }
 
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="IConfigSerializer{Object}"/></returns>
         public IConfigSerializer<Object> GetSerializer(Type ForType) {
             return new XmlSerializer<Object>(ForType);
         }
