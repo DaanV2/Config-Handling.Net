@@ -43,7 +43,7 @@ namespace DaanV2.Config {
 
         /// <summary>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</summary>
         /// <param name="T">the object type to get</param>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="Object"/></returns>
         /// <exception cref="AmbiguousMatchException" />
         /// <exception cref="ArgumentException" />
         /// <exception cref="ArgumentNullException" />
@@ -72,7 +72,7 @@ namespace DaanV2.Config {
 
         /// <summary>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</summary>
         /// <typeparam name="T">The config object to be returned</typeparam>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="T"/></returns>
         /// <exception cref="AmbiguousMatchException" />
         /// <exception cref="ArgumentException" />
         /// <exception cref="ArgumentNullException" />

@@ -22,7 +22,7 @@ namespace DaanV2.Config.Serialization {
     public interface IConfigDeserializer<TOut> {
         /// <summary>Deserializes the given stream into the specified stream</summary>
         /// <param name="Reader">The stream to deserialize</param>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="TOut"/></returns>
         TOut Deserialize(Stream Reader);
     }
 }

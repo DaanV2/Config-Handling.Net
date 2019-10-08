@@ -17,28 +17,28 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
 namespace DaanV2.Config.Serialization {
-    /// <summary>A interface that is responisble for dictating how Serializing factory should behave</summary>
+    /// <summary>A interface that is responisble for dictating how a serializing factory should behave</summary>
     public interface IConfigSerializerFactory {
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <typeparam name="TOut">The object type to deserialize</typeparam>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="IConfigDeserializer{TOut}"/></returns>
         IConfigDeserializer<TOut> GetDeserializer<TOut>();
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="IConfigDeserializer{Object}"/></returns>
         IConfigDeserializer<Object> GetDeserializer(Type ForType);
 
 
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
         /// <typeparam name="TIn">The object type to serialize</typeparam>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="IConfigSerializer{TIn}"/></returns>
         IConfigSerializer<TIn> GetSerializer<TIn>();
 
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
-        ///DOLATER <returns>Returns a <see cref="FILLIN"/></returns>
+        /// <returns>Returns a <see cref="IConfigSerializer{Object}"/></returns>
         IConfigSerializer<Object> GetSerializer(Type ForType);
 
 
