@@ -20,6 +20,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Threading.Tasks;
 
 namespace DaanV2.Config {
     public static partial class ConfigLoader {
