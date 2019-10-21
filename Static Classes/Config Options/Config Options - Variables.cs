@@ -15,14 +15,20 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
-using System.Collections.Concurrent;
 
 namespace DaanV2.Config {
-    /// <summary>The class responsible for presistanting config objects as well as the loading and saving.</summary>
-    public static partial class ConfigMapper {
-        /// <summary>Creates a new instance of <see cref="ConfigMapper"/></summary>
-        static ConfigMapper() {
-            ConfigMapper._Configs = new ConcurrentDictionary<Type, Object>();
-        }
+    public static partial class ConfigOptions {
+
+        /// <summary>The path where values of this class are saved</summary>
+        private static String _FilepathOptions;
+
+        /// <summary>The folder where the configs are stored or loaded from</summary>
+        private static String _ConfigFolder;
+
+        /// <summary>The extension the config files will receive</summary>
+        private static String _ConfigExtension;
+
+        /// <summary>The name of the serializing factory</summary>
+        private static String _ConfigSerializerName;
     }
 }

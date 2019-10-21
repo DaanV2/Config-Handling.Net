@@ -22,46 +22,46 @@ namespace DaanV2.Config {
         /// <summary>Save this class into the config.ini file</summary>
         public static void Save() {
             //Write the config file
-            StreamWriter writer = new StreamWriter(ConfigOptions.FilepathOptions, false);
-            writer.WriteLine($"Config Extension={ConfigOptions.ConfigExtension}");
-            writer.WriteLine($"Config Folder={ConfigOptions.ConfigFolder.Replace(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\'), String.Empty)}");
-            writer.WriteLine($"Config Serializer Name={ConfigOptions.ConfigSerializerName}");
+            StreamWriter writer = new StreamWriter(ConfigOptions._FilepathOptions, false);
+            writer.WriteLine($"Config Extension={ConfigOptions._ConfigExtension}");
+            writer.WriteLine($"Config Folder={ConfigOptions._ConfigFolder.Replace(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\'), String.Empty)}");
+            writer.WriteLine($"Config Serializer Name={ConfigOptions._ConfigSerializerName}");
             writer.Close();
         }
 
         /// <summary>Loads the config.ini file</summary>
         public static void Load() {
             //Retrieve all lines from the config
-            String[] Lines = File.ReadAllLines(ConfigOptions.FilepathOptions);
+            String[] Lines = File.ReadAllLines(ConfigOptions._FilepathOptions);
 
             //Loop through all lines
             foreach (String L in Lines) {
                 if (L.StartsWith("Config Extension=")) {
-                    ConfigOptions.ConfigExtension = L.Remove(0, 17).Trim();
+                    ConfigOptions._ConfigExtension = L.Remove(0, 17).Trim();
                 }
                 else if (L.StartsWith("Config Folder=")) {
-                    ConfigOptions.ConfigFolder = L.Remove(0, 14).Trim();
+                    ConfigOptions._ConfigFolder = L.Remove(0, 14).Trim();
                 }
                 else if (L.StartsWith("Config Serializer Name=")) {
-                    ConfigOptions.ConfigSerializerName = L.Remove(0, 23).Trim();
+                    ConfigOptions._ConfigSerializerName = L.Remove(0, 23).Trim();
                 }
             }
 
             //Relative path
-            if (ConfigOptions.ConfigFolder.StartsWith("\\")) {
-                ConfigFolder = AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\') + ConfigFolder;
+            if (ConfigOptions._ConfigFolder.StartsWith("\\")) {
+                ConfigOptions._ConfigFolder = AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\') + ConfigOptions._ConfigFolder;
             }
 
             //Make sure it ends with '\'
-            if (!ConfigOptions.ConfigFolder.EndsWith("\\")) {
-                ConfigOptions.ConfigFolder += "\\";
+            if (!ConfigOptions._ConfigFolder.EndsWith("\\")) {
+                ConfigOptions._ConfigFolder += "\\";
             }
         }
 
         /// <summary>checks if the config.ini file exists</summary>
         /// <returns>Returns a <see cref="Boolean"/></returns>
         private static Boolean HasFile() {
-            return File.Exists(ConfigOptions.FilepathOptions);
+            return File.Exists(ConfigOptions._FilepathOptions);
         }
     }
 }

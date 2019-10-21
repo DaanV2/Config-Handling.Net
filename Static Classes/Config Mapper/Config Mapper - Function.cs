@@ -27,7 +27,7 @@ namespace DaanV2.Config {
         public static void Remove(Type T) {
             if (ConfigMapper.Configs.ContainsKey(T)) {
                 Object Out = null;
-                ConfigMapper.Configs.TryRemove(T, out Out);
+                ConfigMapper._Configs.TryRemove(T, out Out);
             }
         }
 
@@ -35,11 +35,9 @@ namespace DaanV2.Config {
         /// <param name="T">DOLATER FILL IN</param>
         /// <exception cref="ArgumentNullException" />
         public static void Remove(Object T) {
-            if (ConfigMapper.Configs.ContainsKey(T.GetType())) {
+            if (ConfigMapper._Configs.ContainsKey(T.GetType())) {
                 Object Out = null;
-                ConfigMapper.Configs.TryRemove(T.GetType(), out Out);
-            }
-            else {
+                ConfigMapper._Configs.TryRemove(T.GetType(), out Out);
             }
         }
 
@@ -50,7 +48,7 @@ namespace DaanV2.Config {
                 ConfigMapper.SaveAll();
             }
 
-            ConfigMapper.Configs.Clear();
+            ConfigMapper._Configs.Clear();
         }
 
         /// <summary>Returns the name of the given object needed for the process. also checks if the object has the needed attributes</summary>
@@ -99,7 +97,7 @@ namespace DaanV2.Config {
             }
 
             //Return Out + Name
-            return Ca.Name == null || Ca.Name == String.Empty ?
+            return Ca.Name == null || String.IsNullOrEmpty(Ca.Name) ?
                 Out + T.Name :
                 Out + Ca.Name;
         }

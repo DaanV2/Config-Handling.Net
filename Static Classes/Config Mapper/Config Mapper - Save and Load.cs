@@ -46,7 +46,7 @@ namespace DaanV2.Config {
             String Name = GetName(T);
             Object Temp = ConfigLoader.LoadConfig(T, Name);
 
-            ConfigMapper.Configs[T] = Temp;
+            ConfigMapper._Configs[T] = Temp;
         }
 
         /// <summary>Saves the given type into a file</summary>
@@ -65,8 +65,8 @@ namespace DaanV2.Config {
         /// <exception cref="UnauthorizedAccessException" />
         public static void Save(Type T) {
 
-            if (ConfigMapper.Configs.ContainsKey(T)) {
-                ConfigLoader.SaveConfig(Configs[T], GetName(T));
+            if (ConfigMapper._Configs.ContainsKey(T)) {
+                ConfigLoader.SaveConfig(_Configs[T], GetName(T));
             }
         }
 
@@ -84,16 +84,16 @@ namespace DaanV2.Config {
         /// <exception cref="SecurityException" />
         /// <exception cref="UnauthorizedAccessException" />
         public static void SaveAll() {
-            Type[] Keys = new Type[ConfigMapper.Configs.Count];
-            ConfigMapper.Configs.Keys.CopyTo(Keys, 0);
+            Type[] Keys = new Type[ConfigMapper._Configs.Count];
+            ConfigMapper._Configs.Keys.CopyTo(Keys, 0);
             Type Key;
             Object Item;
 
             for (Int32 I = 0; I < Keys.Length; I++) {
                 Key = Keys[I];
 
-                if (ConfigMapper.Configs.ContainsKey(Key)) {
-                    Item = ConfigMapper.Configs[Key];
+                if (ConfigMapper._Configs.ContainsKey(Key)) {
+                    Item = ConfigMapper._Configs[Key];
 
                     ConfigLoader.SaveConfig(Item, GetName(Key));
                 }

@@ -28,7 +28,7 @@ namespace DaanV2.Config {
         /// <exception cref="ArgumentException" />
         /// <exception cref="ArgumentNullException" />
         public static void Set(Type Key, Object ConfigObject) {
-            ConfigMapper.Configs[Key] = ConfigObject;
+            ConfigMapper._Configs[Key] = ConfigObject;
         }
 
         /// <summary>Sets the given config</summary>
@@ -38,7 +38,7 @@ namespace DaanV2.Config {
         public static void Set(Object ConfigObject) {
             Type T = ConfigObject.GetType();
 
-            ConfigMapper.Configs[T] = ConfigObject;
+            ConfigMapper._Configs[T] = ConfigObject;
         }
 
         /// <summary>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</summary>
@@ -63,11 +63,11 @@ namespace DaanV2.Config {
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="UnauthorizedAccessException" />
         public static Object Get(Type T) {
-            if (!ConfigMapper.Configs.ContainsKey(T)) {
+            if (!ConfigMapper._Configs.ContainsKey(T)) {
                 Load(T);
             }
 
-            return ConfigMapper.Configs[T];
+            return ConfigMapper._Configs[T];
         }
 
         /// <summary>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</summary>
@@ -94,11 +94,11 @@ namespace DaanV2.Config {
         public static T Get<T>() {
             Type Temp = typeof(T);
 
-            if (!ConfigMapper.Configs.ContainsKey(Temp)) {
+            if (!ConfigMapper._Configs.ContainsKey(Temp)) {
                 Load(Temp);
             }
 
-            return (T)ConfigMapper.Configs[Temp];
+            return (T)ConfigMapper._Configs[Temp];
         }
     }
 }

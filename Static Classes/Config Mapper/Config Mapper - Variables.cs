@@ -18,11 +18,9 @@ using System;
 using System.Collections.Concurrent;
 
 namespace DaanV2.Config {
-    /// <summary>The class responsible for presistanting config objects as well as the loading and saving.</summary>
     public static partial class ConfigMapper {
-        /// <summary>Creates a new instance of <see cref="ConfigMapper"/></summary>
-        static ConfigMapper() {
-            ConfigMapper._Configs = new ConcurrentDictionary<Type, Object>();
-        }
+
+        /// <summary>The dataset of types to configs</summary>
+        private static ConcurrentDictionary<Type, Object> _Configs;
     }
 }
