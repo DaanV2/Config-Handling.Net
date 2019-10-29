@@ -115,7 +115,7 @@ namespace DaanV2.Config {
         /// <exception cref="MissingMethodException" />
         /// <exception cref="NotSupportedException" />
         /// <exception cref="PathTooLongException" />
-        /// <exception cref="System.Security.SecurityException" />
+        /// <exception cref="SecurityException" />
         /// <exception cref="UnauthorizedAccessException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="TypeLoadException" />
