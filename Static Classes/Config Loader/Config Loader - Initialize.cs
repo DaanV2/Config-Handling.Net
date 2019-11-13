@@ -14,10 +14,10 @@ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
 WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
-using DaanV2.Config.Serialization;
 using System;
 using System.Collections.Concurrent;
 using System.Reflection;
+using DaanV2.Config.Serialization;
 
 namespace DaanV2.Config {
     /// <summary>The static class responsible for serializing/deserializing object into the files</summary>
