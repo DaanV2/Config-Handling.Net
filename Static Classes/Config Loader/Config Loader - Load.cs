@@ -19,6 +19,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Threading.Tasks;
 using DaanV2.Config.Serialization;
 
 namespace DaanV2.Config {
