@@ -50,25 +50,26 @@ namespace DaanV2.Config {
             FileStream writer = null;
 
 #if !DEBUG
-            try{
+            try {
 #endif
-            //Assign serializer and stream
-            serializer = ConfigLoader._SerializerFactory.GetSerializer(ConfigObject.GetType());
-            writer = new FileStream(FI.FullName, FileMode.Create);
+                //Assign serializer and stream
+                serializer = ConfigLoader._SerializerFactory.GetSerializer(ConfigObject.GetType());
+                writer = new FileStream(FI.FullName, FileMode.Create);
 
-            //Serialize object
-            serializer.Serialize(ConfigObject, writer);
+                //Serialize object
+                serializer.Serialize(ConfigObject, writer);
 
-            //Flush and close
-            writer.Flush();
-            writer.Close();
+                //Flush and close
+                writer.Flush();
+                writer.Close();
 #if !DEBUG
             }
 #pragma warning disable 168
             catch (Exception ex) {
 #pragma warning restore 168
                 //Close stream if open
-                if (writer != null) writer.Close();
+                if (writer != null)
+                    writer.Close();
             }
 #endif
         }

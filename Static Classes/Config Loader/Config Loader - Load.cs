@@ -56,21 +56,21 @@ namespace DaanV2.Config {
                 IConfigDeserializer<Object> deserializer;
                 FileStream reader = null;
 #if !DEBUG
-            try{
+                try {
 #endif
-                //Create the deserializer and stream
-                deserializer = ConfigLoader._SerializerFactory.GetDeserializer(T);
-                reader = new FileStream(Filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    //Create the deserializer and stream
+                    deserializer = ConfigLoader._SerializerFactory.GetDeserializer(T);
+                    reader = new FileStream(Filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
-                //Deserialize file into object
-                Out = deserializer.Deserialize(reader);
-                reader.Close();
+                    //Deserialize file into object
+                    Out = deserializer.Deserialize(reader);
+                    reader.Close();
 #if !DEBUG
-            }
-                catch (Exception ex)
-                {
+                }
+                catch (Exception ex) {
                     //Close of the stream, write error report
-                    if (reader != null) reader.Close();
+                    if (reader != null)
+                        reader.Close();
                     File.Move(Filepath, Filepath + ".corrupt");
                     File.WriteAllText(Filepath + ".corrupt.txt", ex.Message + "\r\n\r\n" + ex.StackTrace);
                 }
@@ -127,17 +127,18 @@ namespace DaanV2.Config {
                 IConfigDeserializer<T> deserializer;
                 FileStream reader = null;
 #if !DEBUG
-            try{
+                try {
 #endif
-                deserializer = ConfigLoader._SerializerFactory.GetDeserializer<T>();
-                reader = new FileStream(Filepath, FileMode.Open);
+                    deserializer = ConfigLoader._SerializerFactory.GetDeserializer<T>();
+                    reader = new FileStream(Filepath, FileMode.Open);
 
-                Out = (T)deserializer.Deserialize(reader);
-                reader.Close();
+                    Out = (T)deserializer.Deserialize(reader);
+                    reader.Close();
 #if !DEBUG
                 }
                 catch (Exception ex) {
-                    if (reader != null) reader.Close();
+                    if (reader != null)
+                        reader.Close();
 
                     File.Move(Filepath, Filepath + ".corrupt");
                     File.WriteAllText(Filepath + ".corrupt.txt", ex.Message);
