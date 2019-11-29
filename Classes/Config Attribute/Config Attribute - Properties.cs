@@ -19,12 +19,21 @@ using System;
 namespace DaanV2.Config {
     public partial class ConfigAttribute {
         /// <summary>Gets or sets the name of this object</summary>
-        public String Name { get => this._Name; set => this._Name = value; }
+        public String Name {
+            get => this._Name;
+            set => this._Name = value;
+        }
 
         /// <summary>Gets or sets the category of this object</summary>
-        public String Category { get => this._Category; set => this._Category = value; }
+        public String Category {
+            get => this._Category;
+            set => this._Category = value;
+        }
 
         /// <summary>Gets or sets the subfolder for this config</summary>
-        public String SubFolder { get => this._SubFolder; set => this._SubFolder = value; }
+        public String SubFolder {
+            get => this._SubFolder;
+            set => this._SubFolder = value;
+        }
     }
 }

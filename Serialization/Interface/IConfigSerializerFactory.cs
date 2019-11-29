@@ -43,6 +43,8 @@ namespace DaanV2.Config.Serialization {
 
 
         /// <summary>The name used for identifying this factory</summary>
-        String Name { get; }
+        String Name {
+            get;
+        }
     }
 }

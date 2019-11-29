@@ -19,6 +19,9 @@ namespace DaanV2.Config {
     public abstract partial class BaseConfig<ConfigType> {
         /// <summary>Gets or sets the config object</summary>
         [DataMember]
-        public ConfigType Config { get => this._Config; set => this._Config = value; }
+        public ConfigType Config {
+            get => this._Config;
+            set => this._Config = value;
+        }
     }
 }
