@@ -14,14 +14,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\Base Config\Base Config - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\Config Attribute\Config Attribute - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\Config Attribute\Config Attribute - Properties.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - Get and Set.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - Initialize.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - Override.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - INewConfig.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Config\General Config - Properties.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Item Config\General Item Config - Initialize.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Item Config\General Item Config - Override.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Classes\General Item Config\General Item Config - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\INewConfig\INewConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer Factory\JSON Serializer Factory - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer\JSON Serializer - IConfigSerializer.cs" />

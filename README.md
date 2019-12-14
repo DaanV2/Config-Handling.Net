@@ -14,7 +14,7 @@ Found under Properties -> Build
 
 ## Compatiblity
 
-The **C#** code is .Net 4.7.2 and .Net-Core 3 Compatible
+The **C#** code is .Net 4.8 and .Net-Core 3 Compatible
 
 ## Overview
 
