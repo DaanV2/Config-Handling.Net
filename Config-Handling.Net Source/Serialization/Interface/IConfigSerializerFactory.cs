@@ -22,29 +22,27 @@ namespace DaanV2.Config.Serialization {
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <typeparam name="TOut">The object type to deserialize</typeparam>
-        /// <returns>Returns a <see cref="IConfigDeserializer{TOut}"/></returns>
+        /// <returns>Returns a serializer that is capable of deserializing the given object type</returns>
         IConfigDeserializer<TOut> GetDeserializer<TOut>();
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
-        /// <returns>Returns a <see cref="IConfigDeserializer{Object}"/></returns>
+        /// <returns>Returns a serializer that is capable of deserializing the given object type</returns>
         IConfigDeserializer<Object> GetDeserializer(Type ForType);
 
 
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
         /// <typeparam name="TIn">The object type to serialize</typeparam>
-        /// <returns>Returns a <see cref="IConfigSerializer{TIn}"/></returns>
+        /// <returns>Returns a serializer that is capable of serializing the given object type</returns>
         IConfigSerializer<TIn> GetSerializer<TIn>();
 
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
-        /// <returns>Returns a <see cref="IConfigSerializer{Object}"/></returns>
+        /// <returns>Returns a serializer that is capable of serializing the given object type</returns>
         IConfigSerializer<Object> GetSerializer(Type ForType);
 
 
-        /// <summary>The name used for identifying this factory</summary>
-        String Name {
-            get;
-        }
+        /// <summary>Gets the name used for identifying this factory</summary>
+        String Name { get; }
     }
 }

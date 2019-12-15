@@ -18,13 +18,13 @@ using System;
 
 namespace DaanV2.Config {
     public partial class ConfigAttribute {
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the name of this object</summary>
         private String _Name;
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the category of this object</summary>
         private String _Category;
 
-        ///DOLATER <summary>Add Description</summary>
+        /// <summary>Gets or sets the subfolder for this config</summary>
         private String _SubFolder;
     }
 }

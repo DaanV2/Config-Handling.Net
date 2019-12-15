@@ -19,6 +19,7 @@ using System.IO;
 namespace DaanV2.Config.Serialization {
     /// <summary>The interface responsible for telling how serializers should behave</summary>
     public interface IConfigSerializer<TIn> {
+        /// <summary>Serializes the given object into the specified stream</summary>
         /// <param name="O">The object to serialize</param>
         /// <param name="Writer">The stream to write to</param>
         void Serialize(TIn O, Stream Writer);

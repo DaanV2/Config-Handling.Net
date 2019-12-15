@@ -20,9 +20,9 @@ namespace DaanV2.Config.Serialization {
 
     /// <summary>The interface responsible for defining how a serializer should behave</summary>
     public interface IConfigDeserializer<TOut> {
-        /// <summary>Deserializes the given stream into the specified stream</summary>
+        /// <summary>Deserializes the given stream into the specified object</summary>
         /// <param name="Reader">The stream to deserialize</param>
-        /// <returns>Returns a <see cref="TOut"/></returns>
+        /// <returns>Deserializes the given stream into the specified object</returns>
         TOut Deserialize(Stream Reader);
     }
 }

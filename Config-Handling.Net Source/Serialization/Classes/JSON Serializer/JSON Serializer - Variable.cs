@@ -18,6 +18,7 @@ using System;
 
 namespace DaanV2.Config.Serialization {
     public partial class JSONSerializer<T> {
+        /// <summary>Gets or sets the type used to serialize</summary>
         private Type _ForType;
     }
 }
