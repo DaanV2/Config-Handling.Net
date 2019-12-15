@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>DaanV2.Config</RootNamespace>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <PackageId>Config-Handling.Net</PackageId>
+    <Authors>Config-Handling.Net</Authors>
+    <Product>Config-Handling.Net</Product>
+    <Description>ConfigHandling.Net takes care of all your config or options objects.
+It takes care of saving, loading, and persistence of objects in memory.
+Config objects are saved in a centralized location.
+It also provides a general config object that can store a string under a specified key</Description>
+    <Copyright>Daan Verstraten 2018</Copyright>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DaanV2/Config-Handling.Net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DefineConstants>TRACE;NETCORE</DefineConstants>
+  </PropertyGroup>
+
+  <Import Project="..\Config-Handling.Net Source\Config Handling.Net - Csharp Source.projitems" Label="Shared" />
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release (&#xD;&#xA;    if not exist &quot;$(SolutionDir)Releases\&quot; mkdir &quot;$(SolutionDir)Releases\&quot;&#xD;&#xA;    if not exist &quot;$(SolutionDir)Releases\$(ProjectName)-$(PlatformName)\&quot; mkdir &quot;$(SolutionDir)Releases\$(ProjectName)-$(PlatformName)\&quot;&#xD;&#xA;    copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Releases\$(ProjectName)-$(PlatformName)\&quot;&#xD;&#xA;)" />
+  </Target>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="copy &quot;$(SolutionDir)LICENSE.txt&quot; &quot;$(TargetDir)LICENSE_Config_Handling.txt&quot;&#xD;&#xA;copy &quot;$(SolutionDir)README.md&quot; &quot;$(TargetDir)README_Config_Handling.md&quot;" />
+  </Target>
+
+</Project>

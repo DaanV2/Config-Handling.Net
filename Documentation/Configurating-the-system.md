@@ -1,3 +1,0 @@
-# Configurating the system
-
-TODO

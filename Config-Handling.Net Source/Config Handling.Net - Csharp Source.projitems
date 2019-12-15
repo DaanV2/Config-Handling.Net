@@ -14,6 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Abstract Classes\Base Config\Base Config - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\Config Attribute\Config Attribute - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\Config Attribute\Config Attribute - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\Config Attribute\Config Attribute - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\INewConfig\INewConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer Factory\JSON Serializer Factory - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer\JSON Serializer - IConfigSerializer.cs" />
@@ -42,15 +43,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Preload.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Save and Load.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Mapper\Config Mapper - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Preload.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Save and Load.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)LICENSE.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Variables.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Abstract Classes\" />
