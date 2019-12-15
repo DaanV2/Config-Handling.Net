@@ -5,16 +5,16 @@
     <RootNamespace>DaanV2.Config</RootNamespace>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <PackageId>Config-Handling.Net</PackageId>
-    <Authors>Config-Handling.Net</Authors>
+    <Authors>Daan Verstraten</Authors>
     <Product>Config-Handling.Net</Product>
-    <Description>ConfigHandling.Net takes care of all your config or options objects.
-It takes care of saving, loading, and persistence of objects in memory.
-Config objects are saved in a centralized location.
-It also provides a general config object that can store a string under a specified key</Description>
+    <Description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location. It also provides a general config object that can store a string under a specified key.</Description>
     <Copyright>Daan Verstraten 2018</Copyright>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/DaanV2/Config-Handling.Net</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DaanV2/Config-Handling.Net</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageTags>config;config-management;</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -49,6 +49,13 @@ It also provides a general config object that can store a string under a specifi
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DefineConstants>TRACE;NETCORE</DefineConstants>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
   <Import Project="..\Config-Handling.Net Source\Config Handling.Net - Csharp Source.projitems" Label="Shared" />
 
