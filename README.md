@@ -1,5 +1,10 @@
 # ConfigHandling.Net
 
+ConfigHandling.Net takes care of all your config or options objects.
+It takes care of saving, loading, and persistence of objects in memory.
+Config objects are saved in a centralized location.
+It also provides a general config object that can store a string under a specified key
+
 **Table of contents**
 - [ConfigHandling.Net](#confighandlingnet)
   - [Compile](#compile)
@@ -16,12 +21,7 @@
     - [Example](#example)
   - [Configurating the system](#configurating-the-system)
   - [Problems](#problems)
-
-ConfigHandling.Net takes care of all your config or options objects.
-It takes care of saving, loading, and persistence of objects in memory.
-Config objects are saved in a centralized location.
-It also provides a general config object that can store a string under a specified key
-
+   
 ## Compile
 
 ### For .Net Core
