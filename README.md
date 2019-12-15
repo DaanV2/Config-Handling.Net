@@ -7,10 +7,9 @@ It also provides a general config object that can store a string under a specifi
 
 **Table of contents**
 - [ConfigHandling.Net](#confighandlingnet)
-  - [Compile](#compile)
-    - [For .Net Core](#for-net-core)
+- [Compile](#compile)
+  - [For .Net Core](#for-net-core)
   - [Compatiblity](#compatiblity)
-  - [Overview](#overview)
 - [Usage](#usage)
   - [INewConfig](#inewconfig)
   - [Config Objects](#config-objects)
@@ -22,9 +21,9 @@ It also provides a general config object that can store a string under a specifi
   - [Configurating the system](#configurating-the-system)
   - [Problems](#problems)
    
-## Compile
+# Compile
 
-### For .Net Core
+## For .Net Core
 
 To compile for .net Core add an conditional compilation symbol named: 'NETCORE'.  
 Found under Properties -> Build.
@@ -32,12 +31,6 @@ Found under Properties -> Build.
 ## Compatiblity
 
 The **C#** code is .Net 4.8 and .Net-Core 3.1 Compatible
-
-## Overview
-
-TODO add more text  
-![Graph](https://raw.githubusercontent.com/DaanV2/ConfigHandling.Net-Master/master/Documentation/Graph%20Overview.png)
-
 
 # Usage
 
@@ -56,10 +49,9 @@ It not nesscary to initialize all its default values every time with preset valu
 
 **Table of contents**
 - [ConfigHandling.Net](#confighandlingnet)
-  - [Compile](#compile)
-    - [For .Net Core](#for-net-core)
+- [Compile](#compile)
+  - [For .Net Core](#for-net-core)
   - [Compatiblity](#compatiblity)
-  - [Overview](#overview)
 - [Usage](#usage)
   - [INewConfig](#inewconfig)
   - [Config Objects](#config-objects)

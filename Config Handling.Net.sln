@@ -11,13 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Config-Handling.Net Core", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FD6CECFD-07E0-438F-89E7-4417165ACD25}"
 	ProjectSection(SolutionItems) = preProject
-		Documentation\BaseConfig.md = Documentation\BaseConfig.md
-		Documentation\ConfigObjects.md = Documentation\ConfigObjects.md
-		Documentation\Configurating the system.md = Documentation\Configurating the system.md
-		Documentation\ExampleConfig.cs = Documentation\ExampleConfig.cs
-		Documentation\INewConfig.md = Documentation\INewConfig.md
 		LICENSE.txt = LICENSE.txt
-		Documentation\Problems.md = Documentation\Problems.md
 		README.md = README.md
 	EndProjectSection
 EndProject
