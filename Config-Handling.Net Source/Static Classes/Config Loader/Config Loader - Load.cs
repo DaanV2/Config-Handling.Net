@@ -58,13 +58,13 @@ namespace DaanV2.Config {
 #if !DEBUG
                 try {
 #endif
-                    //Create the deserializer and stream
-                    deserializer = ConfigLoader._SerializerFactory.GetDeserializer(T);
-                    reader = new FileStream(Filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                //Create the deserializer and stream
+                deserializer = ConfigLoader._SerializerFactory.GetDeserializer(T);
+                reader = new FileStream(Filepath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
-                    //Deserialize file into object
-                    Out = deserializer.Deserialize(reader);
-                    reader.Close();
+                //Deserialize file into object
+                Out = deserializer.Deserialize(reader);
+                reader.Close();
 #if !DEBUG
                 }
                 catch (Exception ex) {
@@ -129,11 +129,11 @@ namespace DaanV2.Config {
 #if !DEBUG
                 try {
 #endif
-                    deserializer = ConfigLoader._SerializerFactory.GetDeserializer<T>();
-                    reader = new FileStream(Filepath, FileMode.Open);
+                deserializer = ConfigLoader._SerializerFactory.GetDeserializer<T>();
+                reader = new FileStream(Filepath, FileMode.Open);
 
-                    Out = (T)deserializer.Deserialize(reader);
-                    reader.Close();
+                Out = deserializer.Deserialize(reader);
+                reader.Close();
 #if !DEBUG
                 }
                 catch (Exception ex) {

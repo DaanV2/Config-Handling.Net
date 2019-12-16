@@ -16,7 +16,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Classes\Config Attribute\Config Attribute - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\Config Attribute\Config Attribute - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\INewConfig\INewConfig.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer Factory\JSON Serializer Factory - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer\JSON Serializer - IConfigSerializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Xml Serializer Factory\Xml Serializer Factory - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\Xml Serializer Factory\Xml Serializer Factory - IConfigSerializerFactory.cs" />

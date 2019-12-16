@@ -52,16 +52,16 @@ namespace DaanV2.Config {
 #if !DEBUG
             try {
 #endif
-                //Assign serializer and stream
-                serializer = ConfigLoader._SerializerFactory.GetSerializer(ConfigObject.GetType());
-                writer = new FileStream(FI.FullName, FileMode.Create);
+            //Assign serializer and stream
+            serializer = ConfigLoader._SerializerFactory.GetSerializer(ConfigObject.GetType());
+            writer = new FileStream(FI.FullName, FileMode.Create);
 
-                //Serialize object
-                serializer.Serialize(ConfigObject, writer);
+            //Serialize object
+            serializer.Serialize(ConfigObject, writer);
 
-                //Flush and close
-                writer.Flush();
-                writer.Close();
+            //Flush and close
+            writer.Flush();
+            writer.Close();
 #if !DEBUG
             }
 #pragma warning disable 168
