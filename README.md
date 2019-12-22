@@ -23,7 +23,7 @@ Config objects are saved in a centralized location.
 
 ## For .Net Core
 
-To compile for .net Core add an conditional compilation symbol named: 'NETCORE'.  
+This section is only required when not using the Nuget package. To compile for .net Core add an conditional compilation symbol named: 'NETCORE'.  
 Found under Properties -> Build.
 
 ## Compatiblity
