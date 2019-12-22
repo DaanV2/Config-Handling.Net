@@ -7,7 +7,7 @@
     <PackageId>Config-Handling.Net</PackageId>
     <Authors>Daan Verstraten</Authors>
     <Product>Config-Handling.Net</Product>
-    <Description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location. It also provides a general config object that can store a string under a specified key.</Description>
+    <Description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location.</Description>
     <Copyright>Daan Verstraten 2018</Copyright>
     <PackageProjectUrl>https://github.com/DaanV2/Config-Handling.Net</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DaanV2/Config-Handling.Net</RepositoryUrl>
@@ -15,6 +15,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageTags>config;config-management;</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
