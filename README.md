@@ -43,21 +43,6 @@ It not necessary to initialize all its default values every time with preset val
 
 ## Config Objects
 
-**Table of contents**
-- [ConfigHandling.Net](#confighandlingnet)
-- [Compile](#compile)
-	- [For .Net Core](#for-net-core)
-	- [Compatiblity](#compatiblity)
-- [Usage](#usage)
-	- [INewConfig](#inewconfig)
-	- [Config Objects](#config-objects)
-		- [Customizing the XML](#customizing-the-xml)
-		- [Customizing the JSON](#customizing-the-json)
-			- [For .Net Framework](#for-net-framework)
-			- [For .Net Core](#for-net-core-1)
-		- [Example](#example)
-- [Problems](#problems)
-
 ### Customizing the XML
 To customize how your data is saved, you can use the XML serialization attributes or use the IXMLSerializable Interface to expand your data handling further.
 To customize config objects use the following directions: [XML Attributes MSDN](https://docs.microsoft.com/en-us/dotnet/standard/serialization/controlling-xml-serialization-using-attributes)
@@ -71,7 +56,7 @@ To customize config objects use the following directions: [How to use DataContra
 #### For .Net Core
 The .Net core version uses the new System.Text.Json serialization. To customize config objects use the following directions: [Customize JSON names and values](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to?view=netcore-3.1#customize-json-names-and-values)
 
-### Example
+# Example
 
 This ExampleConfig class has 3 properties that get saved to a JSON file.
 * The class gets save to: "%Config Folder%\DaanV2\General\Example Config.config"
