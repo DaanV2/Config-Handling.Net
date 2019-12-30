@@ -49,8 +49,4 @@
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Save and Load.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Options\Config Options - Variables.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Abstract Classes\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Serialization\Interface\" />
-  </ItemGroup>
 </Project>
