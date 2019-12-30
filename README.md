@@ -7,16 +7,17 @@ Config objects are saved in a centralized location.
 **Table of contents**
 - [ConfigHandling.Net](#confighandlingnet)
 - [Compile](#compile)
-	- [For .Net Core](#for-net-core)
-	- [Compatiblity](#compatiblity)
+  - [For .Net Core](#for-net-core)
+  - [Compatiblity](#compatiblity)
 - [Usage](#usage)
-	- [INewConfig](#inewconfig)
-	- [Config Objects](#config-objects)
-		- [Customizing the XML](#customizing-the-xml)
-		- [Customizing the JSON](#customizing-the-json)
-			- [For .Net Framework](#for-net-framework)
-			- [For .Net Core](#for-net-core-1)
-		- [Example](#example)
+  - [INewConfig](#inewconfig)
+  - [Config Objects](#config-objects)
+    - [Customizing the XML](#customizing-the-xml)
+    - [Customizing the JSON](#customizing-the-json)
+      - [For .Net Framework](#for-net-framework)
+      - [For .Net Core](#for-net-core-1)
+    - [Example](#example)
+  - [Configuring the system](#configuring-the-system)
 - [Problems](#problems)
    
 # Compile
@@ -46,16 +47,17 @@ It not necessary to initialize all its default values every time with preset val
 **Table of contents**
 - [ConfigHandling.Net](#confighandlingnet)
 - [Compile](#compile)
-	- [For .Net Core](#for-net-core)
-	- [Compatiblity](#compatiblity)
+  - [For .Net Core](#for-net-core)
+  - [Compatiblity](#compatiblity)
 - [Usage](#usage)
-	- [INewConfig](#inewconfig)
-	- [Config Objects](#config-objects)
-		- [Customizing the XML](#customizing-the-xml)
-		- [Customizing the JSON](#customizing-the-json)
-			- [For .Net Framework](#for-net-framework)
-			- [For .Net Core](#for-net-core-1)
-		- [Example](#example)
+  - [INewConfig](#inewconfig)
+  - [Config Objects](#config-objects)
+    - [Customizing the XML](#customizing-the-xml)
+    - [Customizing the JSON](#customizing-the-json)
+      - [For .Net Framework](#for-net-framework)
+      - [For .Net Core](#for-net-core-1)
+    - [Example](#example)
+  - [Configuring the system](#configuring-the-system)
 - [Problems](#problems)
 
 ### Customizing the XML
@@ -119,7 +121,7 @@ public class ExampleConfig : INewConfig {
 ```
 
 **JSON file of ExampleConfig**
-JSON
+```JSON
 {
     "MultiThread": true,
     "TrimData": true,
