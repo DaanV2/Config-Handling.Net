@@ -6,9 +6,6 @@ Config objects are saved in a centralized location.
 
 **Table of contents**
 - [ConfigHandling.Net](#confighandlingnet)
-- [Compile](#compile)
-  - [For .Net Core](#for-net-core)
-  - [Compatiblity](#compatiblity)
 - [Usage](#usage)
   - [Calling Objects](#calling-objects)
   - [INewConfig](#inewconfig)
@@ -16,21 +13,13 @@ Config objects are saved in a centralized location.
     - [Customizing the XML](#customizing-the-xml)
     - [Customizing the JSON](#customizing-the-json)
       - [For .Net Framework](#for-net-framework)
-      - [For .Net Core](#for-net-core-1)
+      - [For .Net Core](#for-net-core)
+- [Compile](#compile)
+  - [For .Net Core](#for-net-core-1)
+  - [Compatiblity](#compatiblity)
 - [Example](#example)
   - [Configuring the system](#configuring-the-system)
 - [Problems](#problems)
-     
-# Compile
-
-## For .Net Core
-
-This section is only required when not using the Nuget package. To compile for .net Core add an conditional compilation symbol named: 'NETCORE'.  
-Found under Properties -> Build.
-
-## Compatiblity
-
-The **C#** code is .Net 4.8 and .Net-Core 3.1 Compatible
 
 # Usage
 
@@ -65,6 +54,17 @@ To customize config objects use the following directions: [How to use DataContra
 
 #### For .Net Core
 The .Net core version uses the new System.Text.Json serialization. To customize config objects use the following directions: [Customize JSON names and values](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to?view=netcore-3.1#customize-json-names-and-values)
+
+# Compile
+
+## For .Net Core
+
+This section is only required when not using the Nuget package. To compile for .net Core add an conditional compilation symbol named: 'NETCORE'.  
+Found under Properties -> Build.
+
+## Compatiblity
+
+The **C#** code is .Net 4.8 and .Net-Core 3.1 Compatible
 
 # Example
 
