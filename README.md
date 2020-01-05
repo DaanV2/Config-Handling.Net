@@ -10,6 +10,7 @@ Config objects are saved in a centralized location.
   - [For .Net Core](#for-net-core)
   - [Compatiblity](#compatiblity)
 - [Usage](#usage)
+  - [Calling Objects](#calling-objects)
   - [INewConfig](#inewconfig)
   - [Config Objects](#config-objects)
     - [Customizing the XML](#customizing-the-xml)
@@ -19,7 +20,7 @@ Config objects are saved in a centralized location.
 - [Example](#example)
   - [Configuring the system](#configuring-the-system)
 - [Problems](#problems)
-   
+     
 # Compile
 
 ## For .Net Core
@@ -32,6 +33,14 @@ Found under Properties -> Build.
 The **C#** code is .Net 4.8 and .Net-Core 3.1 Compatible
 
 # Usage
+
+## Calling Objects
+
+This library is made to make simple calls to config objects:
+
+```csharp
+ExampleConfig Config = ConfigMapper.Get<ExampleConfig>();
+```
 
 ## INewConfig
 
