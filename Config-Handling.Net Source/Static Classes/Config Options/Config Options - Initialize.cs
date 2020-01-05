@@ -24,6 +24,7 @@ namespace DaanV2.Config {
             ConfigOptions._ConfigExtension = ".config";
             ConfigOptions._FilepathOptions = AppDomain.CurrentDomain.BaseDirectory + "config.ini";
             ConfigOptions._ConfigSerializerName = "json";
+            ConfigOptions._LockCount = Environment.ProcessorCount;
 
             //If the .ini file doesnt exists then make it else load it
             if (!HasFile()) {

@@ -32,6 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Serialization\Classes\JSON Serializer Factory\JSON Serializer Factory - IConfigSerializerFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Factory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Lock.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Preload.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Variable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\Config Loader\Config Loader - Load.cs" />

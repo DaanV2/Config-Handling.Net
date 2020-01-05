@@ -16,6 +16,7 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
+using System.Threading;
 using DaanV2.Config.Serialization;
 
 namespace DaanV2.Config {
@@ -36,7 +37,10 @@ namespace DaanV2.Config {
         /// <exception cref="System.Security.SecurityException" />
         public static void SaveConfig(Object ConfigObject, String Filename) {
             //Get file info on the file to save to
-            FileInfo FI = new FileInfo(ConfigOptions.ConfigFolder + Filename + ConfigOptions.ConfigExtension);
+            String Filepath = ConfigOptions.ConfigFolder + Filename + ConfigOptions.ConfigExtension;
+            FileInfo FI = new FileInfo(Filepath);
+            EventWaitHandle Lock = ConfigLoader.GetLock(Filepath);
+
             //Check parent directory
             DirectoryInfo DI = FI.Directory;
 
@@ -49,6 +53,7 @@ namespace DaanV2.Config {
             IConfigSerializer<Object> serializer = null;
             FileStream writer = null;
 
+            Lock.WaitOne();
 #if !DEBUG
             try {
 #endif
@@ -72,6 +77,8 @@ namespace DaanV2.Config {
                     writer.Close();
             }
 #endif
+
+            Lock.Set();
         }
     }
 }

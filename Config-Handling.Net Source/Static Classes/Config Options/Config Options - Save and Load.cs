@@ -26,6 +26,7 @@ namespace DaanV2.Config {
             writer.WriteLine($"Config Extension={ConfigOptions._ConfigExtension}");
             writer.WriteLine($"Config Folder={ConfigOptions._ConfigFolder.Replace(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\'), String.Empty)}");
             writer.WriteLine($"Config Serializer Name={ConfigOptions._ConfigSerializerName}");
+            writer.WriteLine($"Lock Count={ConfigOptions._LockCount}");
             writer.Close();
         }
 
@@ -44,6 +45,12 @@ namespace DaanV2.Config {
                 }
                 else if (L.StartsWith("Config Serializer Name=")) {
                     ConfigOptions._ConfigSerializerName = L.Remove(0, 23).Trim();
+                }
+                else if (L.StartsWith("Lock Count=")) {
+                    String Number = L.Remove(0, 11).Trim();
+                    Int32 Out;
+                    if (Int32.TryParse(Number, out Out))
+                        ConfigOptions._LockCount = Out;
                 }
             }
 

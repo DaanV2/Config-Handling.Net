@@ -19,6 +19,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Threading;
 using System.Threading.Tasks;
 using DaanV2.Config.Serialization;
 
@@ -48,6 +49,7 @@ namespace DaanV2.Config {
         public static Object LoadConfig(Type T, String Filename) {
             //Create the filepath of where the config file could be found
             String Filepath = ConfigOptions.ConfigFolder + Filename + ConfigOptions.ConfigExtension;
+            EventWaitHandle Lock = ConfigLoader.GetLock(Filepath);
             Object Out = null;
 
             //Check if file exists
@@ -55,6 +57,8 @@ namespace DaanV2.Config {
                 //Setup
                 IConfigDeserializer<Object> deserializer;
                 FileStream reader = null;
+
+                Lock.WaitOne();
 #if !DEBUG
                 try {
 #endif
@@ -75,6 +79,7 @@ namespace DaanV2.Config {
                     File.WriteAllText(Filepath + ".corrupt.txt", ex.Message + "\r\n\r\n" + ex.StackTrace);
                 }
 #endif
+                Lock.Set();
             }
 
             //Checks if object has not been succesfully been deserialized.
@@ -121,11 +126,14 @@ namespace DaanV2.Config {
         /// <exception cref="TypeLoadException" />
         public static T LoadConfig<T>(String Filename) {
             String Filepath = ConfigOptions.ConfigFolder + Filename + ".xml";
+            EventWaitHandle Lock = ConfigLoader.GetLock(Filepath);
             T Out = default;
 
             if (File.Exists(Filepath)) {
                 IConfigDeserializer<T> deserializer;
                 FileStream reader = null;
+
+                Lock.WaitOne();
 #if !DEBUG
                 try {
 #endif
@@ -144,6 +152,7 @@ namespace DaanV2.Config {
                     File.WriteAllText(Filepath + ".corrupt.txt", ex.Message);
                 }
 #endif
+                Lock.Set();
             }
 
             if (Out == null) {

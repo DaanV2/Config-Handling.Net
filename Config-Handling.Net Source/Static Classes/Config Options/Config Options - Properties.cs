@@ -18,8 +18,6 @@ using System;
 
 namespace DaanV2.Config {
     public static partial class ConfigOptions {
-
-
         /// <summary>The path where values of this class are saved</summary>
         private static String FilepathOptions {
             get => _FilepathOptions;
@@ -42,6 +40,12 @@ namespace DaanV2.Config {
         public static String ConfigSerializerName {
             get => _ConfigSerializerName;
             set => _ConfigSerializerName = value;
+        }
+
+        /// <summary>The amount of locks used by the config loader</summary>
+        public static Int32 LockCount { 
+            get => _LockCount; 
+            set => _LockCount = value; 
         }
     }
 }

@@ -15,23 +15,16 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
+using System.Threading;
 
 namespace DaanV2.Config {
-    public static partial class ConfigOptions {
-
-        /// <summary>The path where values of this class are saved</summary>
-        private static String _FilepathOptions;
-
-        /// <summary>The folder where the configs are stored or loaded from</summary>
-        private static String _ConfigFolder;
-
-        /// <summary>The extension the config files will receive</summary>
-        private static String _ConfigExtension;
-
-        /// <summary>The name of the serializing factory</summary>
-        private static String _ConfigSerializerName;
-
-        /// <summary>The amount of locks used</summary>
-        private static Int32 _LockCount;
+    public static partial class ConfigLoader {
+        /// <summary>Returns a lock that is assigned to the specified filepath</summary>
+        /// <param name="Filepath">The filepath to return a lock for</param>
+        /// <returns>Returns a lock that is assigned to the specified filepath</returns>
+        private static EventWaitHandle GetLock(String Filepath) {
+            Int32 Index = Filepath.GetHashCode() % ConfigLoader._Locks.Length;
+            return ConfigLoader._Locks[Index];
+        }
     }
 }
