@@ -54,13 +54,18 @@ namespace DaanV2.Config {
         /// <exception cref="OverflowException" />
         /// <exception cref="TypeLoadException" />
         public static void Preload(Assembly assembly) {
-            Type[] Types = assembly.GetExportedTypes();
+            try {
+                Type[] Types = assembly.GetExportedTypes();
 
-            //Loop through types looking for the config
-            for (Int32 I = 0; I < Types.Length; I++) {
-                if (Types[I].GetCustomAttribute(typeof(ConfigAttribute)) != null && Types[I].IsClass) {
-                    ConfigMapper.Get(Types[I]);
+                //Loop through types looking for the config
+                for (Int32 I = 0; I < Types.Length; I++) {
+                    if (Types[I].GetCustomAttribute(typeof(ConfigAttribute)) != null && Types[I].IsClass) {
+                        ConfigMapper.Get(Types[I]);
+                    }
                 }
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
             }
         }
     }

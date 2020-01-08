@@ -25,15 +25,20 @@ namespace DaanV2.Config {
         /// <summary>Reflects upong the given assemblies to load in specified factories to load into memory</summary>
         /// <param name="assembly">The assembly to reflect upon</param>
         public static void AddFactories(Assembly assembly) {
-            Type[] Types = assembly.GetTypes();
-            Type T;
+            try {
+                Type[] Types = assembly.GetTypes();
+                Type T;
 
-            for (Int32 I = 0; I < Types.Length; I++) {
-                T = Types[I];
+                for (Int32 I = 0; I < Types.Length; I++) {
+                    T = Types[I];
 
-                if (T.GetInterface(nameof(IConfigSerializerFactory)) != null) {
-                    AddFactory((IConfigSerializerFactory)Activator.CreateInstance(T));
+                    if (T.GetInterface(nameof(IConfigSerializerFactory)) != null) {
+                        AddFactory((IConfigSerializerFactory)Activator.CreateInstance(T));
+                    }
                 }
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
             }
         }
 
