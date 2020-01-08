@@ -23,7 +23,7 @@ namespace DaanV2.Config {
         /// <param name="Filepath">The filepath to return a lock for</param>
         /// <returns>Returns a lock that is assigned to the specified filepath</returns>
         private static EventWaitHandle GetLock(String Filepath) {
-            Int32 Index = Filepath.GetHashCode() % ConfigLoader._Locks.Length;
+            Int32 Index = Math.Abs(Filepath.GetHashCode()) % ConfigLoader._Locks.Length;
             return ConfigLoader._Locks[Index];
         }
     }
