@@ -14,16 +14,12 @@ namespace Config.Test {
         [DataMember]
         public Boolean Test { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public void SetNewInformation() {
             this.Test = true;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        ///DOLATER <summary>Add Description</summary>
         public FakeConfig() {
             this.Test = false;
         }
