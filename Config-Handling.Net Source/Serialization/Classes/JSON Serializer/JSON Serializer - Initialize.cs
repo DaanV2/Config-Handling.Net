@@ -19,12 +19,12 @@ using System;
 namespace DaanV2.Config.Serialization {
     /// <summary>The class responsible for forming the contract between the interface and the json serializer</summary>
     public partial class JSONSerializer<T> {
-        /// <summary>Creates a new instance of <see cref="JSONSerializer"/></summary>
+        /// <summary>Creates a new instance of <see cref="JSONSerializer{T}"/></summary>
         public JSONSerializer() {
             this._ForType = typeof(T);
         }
 
-        /// <summary>Creates a new instance of <see cref="JSONSerializer"/></summary>
+        /// <summary>Creates a new instance of <see cref="JSONSerializer{T}"/></summary>
         /// <param name="ForceType">Force the serializer to use this type instead of its generic type</param>
         public JSONSerializer(Type ForceType) {
             this._ForType = ForceType;

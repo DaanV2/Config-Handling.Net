@@ -17,7 +17,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 namespace DaanV2.Config {
     ///<summary>A class that handles the config property and making sure it sets the value</summary>
     public abstract partial class BaseConfig<ConfigType> {
-        /// <summary>Creates a new instance of <see cref="BaseConfig"/></summary>
+        /// <summary>Creates a new instance of <see cref="BaseConfig{ConfigType}"/></summary>
         public BaseConfig() {
             this.Config = ConfigMapper.Get<ConfigType>();
         }

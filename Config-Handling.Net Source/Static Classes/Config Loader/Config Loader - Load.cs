@@ -106,7 +106,7 @@ namespace DaanV2.Config {
         /// <summary>Loads the given config into an object from the xml file in the config folder</summary>
         /// <typeparam name="T">The object type to be returned and loaded</typeparam>
         /// <param name="Filename">The name of the config</param>
-        /// <returns>Returns a <see cref="T"/></returns>
+        /// <returns>Loads the given config into an object from the xml file in the config folder</returns>
         /// <exception cref="ArgumentException" />
         /// <exception cref="ArgumentNullException" />
         /// <exception cref="ArgumentOutOfRangeException" />

@@ -17,6 +17,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
 namespace DaanV2.Config {
+    /// <summary>The static class that is responsible for handling the options</summary>
     public static partial class ConfigOptions {
         /// <summary>Initializes a new instance of <see cref="ConfigOptions"/></summary>
         static ConfigOptions() {
