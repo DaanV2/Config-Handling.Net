@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Required elements-->
+        <id>Config-Handling.Net</id>
+        <version>1.0.7</version>
+        <description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location.</description>
+        <authors>Daan Verstraten</authors>
+		<title>Config-Handling.Net</title>
+
+        <!-- Optional elements -->
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <license type="file">LICENSE.txt</license>
+        <projectUrl>https://github.com/DaanV2/Config-Handling.Net</projectUrl>
+        <copyright>Daan Verstraten 2018</copyright>
+        <tags>config config-management</tags>
+        <repository type="git" url="https://github.com/DaanV2/Config-Handling.Net" />
+        <releaseNotes>Add xml documentation, so descriptions get filled out</releaseNotes>
+        <icon>images\icon.png</icon>
+        <dependencies>
+            <group targetFramework=".NETCoreApp3.0" />
+            <group targetFramework=".NETCoreApp3.1" />
+            <group targetFramework=".NETFramework4.8" />
+            <group targetFramework=".NETStandard2.0" />
+            <group targetFramework=".NETStandard2.1" />
+        </dependencies>
+
+        <!-- ... -->
+    </metadata>
+    <!-- Optional 'files' node -->
+    <files>
+        <file src="..\Nuget\images\icon.png" target="images\" />
+        <file src="..\Source\LICENSE.txt" target="" />
+
+        <!-- Any CPU -->
+        <file src="lib\net48\*.dll" target="lib\net48\" />
+        <file src="lib\netcoreapp3.0\*.dll" target="lib\netcoreapp3.0\" />
+        <file src="lib\netcoreapp3.1\*.dll" target="lib\netcoreapp3.1\" />
+        <file src="lib\netstandard2.0\*.dll" target="lib\netstandard2.0\" />
+        <file src="lib\netstandard2.1\*.dll" target="lib\netstandard2.1\" />
+				
+		<!-- x64 -->
+		<!-- Future stuff 
+		<file src="runtimes\win-x64\lib\net48\*.dll" target="runtimes\win-x64\lib\net48\" />
+		<file src="runtimes\win-x64\lib\netcoreapp3.0\*.dll" target="runtimes\win-x64\lib\netcoreapp3.0\" />
+        <file src="runtimes\win-x64\lib\netcoreapp3.1\*.dll" target="runtimes\win-x64\lib\netcoreapp3.1\" />
+        <file src="runtimes\win-x64\lib\netstandard2.0\*.dll" target="runtimes\win-x64\lib\netstandard2.0\" />
+        <file src="runtimes\win-x64\lib\netstandard2.1\*.dll" target="runtimes\win-x64\lib\netstandard2.1\" />
+		-->
+		
+		<!-- x86 -->
+		<!-- Future stuff 
+		<file src="runtimes\win-x86\lib\net48\*.dll" target="runtimes\win-x86\lib\net48\" />
+		<file src="runtimes\win-x86\lib\netcoreapp3.0\*.dll" target="runtimes\win-x86\lib\netcoreapp3.0\" />
+        <file src="runtimes\win-x86\lib\netcoreapp3.1\*.dll" target="runtimes\win-x86\lib\netcoreapp3.1\" />
+        <file src="runtimes\win-x86\lib\netstandard2.0\*.dll" target="runtimes\win-x86\lib\netstandard2.0\" />
+        <file src="runtimes\win-x86\lib\netstandard2.1\*.dll" target="runtimes\win-x86\lib\netstandard2.1\" />
+		-->		
+    </files>
+</package>

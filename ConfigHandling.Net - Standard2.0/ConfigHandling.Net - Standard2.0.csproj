@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>DaanV2.Config</RootNamespace>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+
+    <AssemblyName>ConfigHandling.Net</AssemblyName>
+    <Authors>Daan Verstraten</Authors>
+    <Description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location.</Description>
+    <Copyright>Daan Verstraten 2018</Copyright>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/DaanV2/Config-Handling.Net</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DaanV2/Config-Handling.Net</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>config;config-management;</PackageTags>
+    <AssemblyVersion>1.0.7.0</AssemblyVersion>
+    <SignAssembly>false</SignAssembly>
+    <FileVersion>1.0.7.0</FileVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.0\ConfigHandling.Net.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.0\ConfigHandling.Net.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.0\ConfigHandling.Net.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.0\ConfigHandling.Net.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.0\ConfigHandling.Net.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.0\ConfigHandling.Net.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Source\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <Import Project="..\Source\Config-Handling.Net Source\Config Handling.Net - Csharp Source.projitems" Label="Shared" />
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="set Framework=netstandard2.0&#xD;&#xA;if '$(ConfigurationName)' == 'Release' (&#xD;&#xA;    if '$(PlatformName)' == 'AnyCPU' (&#xD;&#xA;        mkdir &quot;$(SolutionDir)Nuget\lib\%25Framework%25\&quot;&#xD;&#xA;        copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\lib\%25Framework%25\&quot;&#xD;&#xA;    ) ELSE (&#xD;&#xA;        mkdir &quot;$(SolutionDir)Nuget\runtimes\win-$(PlatformName)\lib\%25Framework%25\&quot;&#xD;&#xA;        copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\runtimes\win-$(PlatformName)\lib\%25Framework%25\&quot;&#xD;&#xA;     )&#xD;&#xA;)" />
+  </Target>
+
+</Project>
