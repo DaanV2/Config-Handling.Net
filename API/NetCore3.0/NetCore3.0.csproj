@@ -23,36 +23,36 @@
     <DefineConstants>TRACE;NETCORE</DefineConstants>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - NetCore3.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.0\Documentation.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <DefineConstants>TRACE;NETCORE</DefineConstants>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - NetCore3.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.0\Documentation.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DefineConstants>TRACE;NETCORE</DefineConstants>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - NetCore3.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.0\Documentation.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;NETCORE</DefineConstants>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - NetCore3.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.0\Documentation.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <DefineConstants>TRACE;NETCORE</DefineConstants>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - NetCore3.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.0\Documentation.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DefineConstants>TRACE;NETCORE</DefineConstants>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - NetCore3.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.0\Documentation.xml</DocumentationFile>
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

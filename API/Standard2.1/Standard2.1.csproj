@@ -23,34 +23,37 @@
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Standard2.1\Documentation.xml</DocumentationFile>
     <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Standard2.1\Documentation.xml</DocumentationFile>
     <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Standard2.1\Documentation.xml</DocumentationFile>
     <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Standard2.1\Documentation.xml</DocumentationFile>
+    <Optimize>false</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Standard2.1\Documentation.xml</DocumentationFile>
+    <Optimize>false</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Standard2.1\Documentation.xml</DocumentationFile>
+    <Optimize>false</Optimize>
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
