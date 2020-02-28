@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Config.Test {
     [TestClass]
     public partial class Tests {
+        [TestInitialize]
         public void Setup() {
             ConfigMapper.Preload();
         }
