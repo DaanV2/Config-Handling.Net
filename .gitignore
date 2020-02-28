@@ -3,6 +3,7 @@
 
 Nuget/runtimes
 Nuget/lib
+nuget.exe
 
 # User-specific files
 *.suo
