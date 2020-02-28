@@ -21,14 +21,10 @@ namespace DaanV2.Config.Serialization {
     /// <summary>The class that is responisble binding the .net xml serializer to the interface</summary>
     public partial class XmlSerializer<T> : XmlSerializer {
         /// <summary>Creates a new instance of <see cref="XmlSerializer"/></summary>
-        public XmlSerializer() : base(typeof(T)) {
-
-        }
+        public XmlSerializer() : base(typeof(T)) { }
 
         /// <summary>Creates a new instance of <see cref="XmlSerializer"/></summary>
         /// <param name="ForceType">The type the serializer has to serialize</param>
-        public XmlSerializer(Type ForceType) : base(ForceType) {
-
-        }
+        public XmlSerializer(Type ForceType) : base(ForceType) {  }
     }
 }

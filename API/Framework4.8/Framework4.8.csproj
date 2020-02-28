@@ -90,7 +90,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <Import Project="..\Source\Config-Handling.Net Source\Config Handling.Net - Csharp Source.projitems" Label="Shared" />
+  <Import Project="..\..\Source\Source.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>set Framework=net48

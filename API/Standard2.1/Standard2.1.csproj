@@ -23,44 +23,40 @@
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <PlatformTarget>x86</PlatformTarget>
-    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <DocumentationFile>D:\Mijn Projecten\Software\Nuget\ConfigHandling.Net\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\ConfigHandling.Net - Standard2.1\ConfigHandling.Net.xml</DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\Source\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
-  <Import Project="..\Source\Config-Handling.Net Source\Config Handling.Net - Csharp Source.projitems" Label="Shared" />
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="set Framework=netstandard2.1&#xD;&#xA;if '$(ConfigurationName)' == 'Release' (&#xD;&#xA;    if '$(PlatformName)' == 'AnyCPU' (&#xD;&#xA;        mkdir &quot;$(SolutionDir)Nuget\lib\%25Framework%25\&quot;&#xD;&#xA;        copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\lib\%25Framework%25\&quot;&#xD;&#xA;    ) ELSE (&#xD;&#xA;        mkdir &quot;$(SolutionDir)Nuget\runtimes\win-$(PlatformName)\lib\%25Framework%25\&quot;&#xD;&#xA;        copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\runtimes\win-$(PlatformName)\lib\%25Framework%25\&quot;&#xD;&#xA;     )&#xD;&#xA;)" />
   </Target>
+
+  <Import Project="..\..\Source\Source.projitems" Label="Shared" />
 
 </Project>

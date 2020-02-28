@@ -4,7 +4,7 @@ The project that packages the ConfigHandling.Net Respository into a nuget packag
 # How to build
 
 * Download the lastest command line nuget.exe files from [nuget.org/downloads](https://www.nuget.org/downloads).
-* Move the downloaded nuget.exe file to the folder "ConfigHandling.Net-Nuget-Package/Nuget".
+* Move the downloaded nuget.exe file to the folder "ConfigHandling.Net/Nuget".
 * Open the solution (.sln file) with visual studio.
 * Go to: 'Build' -> 'Batch Build...'.
 * Check if all 'Release' Configurations have been checked in the Build column.
