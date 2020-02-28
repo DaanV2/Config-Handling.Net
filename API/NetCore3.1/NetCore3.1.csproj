@@ -39,6 +39,7 @@
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.1\Documentation.xml</DocumentationFile>
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
@@ -46,6 +47,7 @@
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.1\Documentation.xml</DocumentationFile>
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -53,6 +55,7 @@
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.1\Documentation.xml</DocumentationFile>
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
