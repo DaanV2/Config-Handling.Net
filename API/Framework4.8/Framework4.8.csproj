@@ -99,8 +99,8 @@ if '$(ConfigurationName)' == 'Release' (
         mkdir "$(SolutionDir)Nuget\lib\%25Framework%25\"
         copy "$(TargetDir)*" "$(SolutionDir)Nuget\lib\%25Framework%25\"
     ) ELSE (
-        mkdir "$(SolutionDir)Nuget\runtimes\win-$(PlatformName)\lib\%25Framework%25\"
-        copy "$(TargetDir)*" "$(SolutionDir)Nuget\runtimes\win-$(PlatformName)\lib\%25Framework%25\"
+        mkdir "$(SolutionDir)Nuget\runtimes\win10-$(PlatformName)\lib\%25Framework%25\"
+        copy "$(TargetDir)*" "$(SolutionDir)Nuget\runtimes\win10-$(PlatformName)\lib\%25Framework%25\"
      )
 )</PostBuildEvent>
   </PropertyGroup>
