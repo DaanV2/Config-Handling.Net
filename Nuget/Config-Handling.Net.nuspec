@@ -3,7 +3,7 @@
     <metadata>
         <!-- Required elements-->
         <id>Config-Handling.Net</id>
-        <version>1.0.7</version>
+        <version>1.0.8</version>
         <description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location.</description>
         <authors>Daan Verstraten</authors>
 		<title>Config-Handling.Net</title>
@@ -12,10 +12,10 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <license type="file">LICENSE.txt</license>
         <projectUrl>https://github.com/DaanV2/Config-Handling.Net</projectUrl>
-        <copyright>Daan Verstraten 2018</copyright>
+        <copyright>aaDn Verstraten 2018</copyright>
         <tags>config config-management</tags>
         <repository type="git" url="https://github.com/DaanV2/Config-Handling.Net" />
-        <releaseNotes>Add xml documentation, so descriptions get filled out</releaseNotes>
+        <releaseNotes>Added the ability to not use presistance on config objects</releaseNotes>
         <icon>images\icon.png</icon>
         <dependencies>
             <group targetFramework=".NETCoreApp3.0" />
@@ -29,8 +29,8 @@
     </metadata>
     <!-- Optional 'files' node -->
     <files>
-        <file src="..\Nuget\images\icon.png" target="images\" />
-        <file src="..\Source\LICENSE.txt" target="" />
+        <file src=".\images\icon.png" target="images\" />
+        <file src="..\LICENSE.txt" target="" />
 
         <!-- Any CPU -->
         <file src="lib\net48\*.dll" target="lib\net48\" />

@@ -396,6 +396,54 @@
             <exception cref="T:System.Reflection.TargetInvocationException" />
             <exception cref="T:System.UnauthorizedAccessException" />
         </member>
+        <member name="M:DaanV2.Config.ConfigMapper.Get(System.Type,System.Boolean)">
+            <summary>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</summary>
+            <param name="T">the object type to get</param>
+            <param name="PresistObject">If true the object is stored in memory, if false then the config is just loaded from the file</param>
+            <returns>Returns a <see cref="T:System.Object"/></returns>
+            <exception cref="T:System.Reflection.AmbiguousMatchException" />
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.ArgumentOutOfRangeException" />
+            <exception cref="T:System.Runtime.InteropServices.COMException" />
+            <exception cref="T:System.IO.DirectoryNotFoundException" />
+            <exception cref="T:System.IO.FileNotFoundException" />
+            <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException" />
+            <exception cref="T:System.IO.IOException" />
+            <exception cref="T:System.MethodAccessException" />
+            <exception cref="T:System.MemberAccessException" />
+            <exception cref="T:System.MissingMethodException" />
+            <exception cref="T:System.NotSupportedException" />
+            <exception cref="T:System.IO.PathTooLongException" />
+            <exception cref="T:System.Security.SecurityException" />
+            <exception cref="T:System.TypeLoadException" />
+            <exception cref="T:System.Reflection.TargetInvocationException" />
+            <exception cref="T:System.UnauthorizedAccessException" />
+        </member>
+        <member name="M:DaanV2.Config.ConfigMapper.Get``1(System.Boolean)">
+            <summary>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</summary>
+            <typeparam name="T">The config object to be returned</typeparam>
+            <param name="PresistObject">If true the object is stored in memory, if false then the config is just loaded from the file</param>
+            <returns>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</returns>
+            <exception cref="T:System.Reflection.AmbiguousMatchException" />
+            <exception cref="T:System.ArgumentException" />
+            <exception cref="T:System.ArgumentNullException" />
+            <exception cref="T:System.ArgumentOutOfRangeException" />
+            <exception cref="T:System.Runtime.InteropServices.COMException" />
+            <exception cref="T:System.IO.DirectoryNotFoundException" />
+            <exception cref="T:System.IO.FileNotFoundException" />
+            <exception cref="T:System.Runtime.InteropServices.InvalidComObjectException" />
+            <exception cref="T:System.IO.IOException" />
+            <exception cref="T:System.MethodAccessException" />
+            <exception cref="T:System.MemberAccessException" />
+            <exception cref="T:System.MissingMethodException" />
+            <exception cref="T:System.NotSupportedException" />
+            <exception cref="T:System.IO.PathTooLongException" />
+            <exception cref="T:System.Security.SecurityException" />
+            <exception cref="T:System.TypeLoadException" />
+            <exception cref="T:System.Reflection.TargetInvocationException" />
+            <exception cref="T:System.UnauthorizedAccessException" />
+        </member>
         <member name="M:DaanV2.Config.ConfigMapper.#cctor">
             <summary>Creates a new instance of <see cref="T:DaanV2.Config.ConfigMapper"/></summary>
         </member>

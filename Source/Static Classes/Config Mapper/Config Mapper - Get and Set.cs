@@ -100,5 +100,77 @@ namespace DaanV2.Config {
 
             return (T)ConfigMapper._Configs[Temp];
         }
+
+        /// <summary>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</summary>
+        /// <param name="T">the object type to get</param>
+        /// <param name="PresistObject">If true the object is stored in memory, if false then the config is just loaded from the file</param>
+        /// <returns>Returns a <see cref="Object"/></returns>
+        /// <exception cref="AmbiguousMatchException" />
+        /// <exception cref="ArgumentException" />
+        /// <exception cref="ArgumentNullException" />
+        /// <exception cref="ArgumentOutOfRangeException" />
+        /// <exception cref="COMException" />
+        /// <exception cref="DirectoryNotFoundException" />
+        /// <exception cref="FileNotFoundException" />
+        /// <exception cref="InvalidComObjectException" />
+        /// <exception cref="IOException" />
+        /// <exception cref="MethodAccessException" />
+        /// <exception cref="MemberAccessException" />
+        /// <exception cref="MissingMethodException" />
+        /// <exception cref="NotSupportedException" />
+        /// <exception cref="PathTooLongException" />
+        /// <exception cref="SecurityException" />
+        /// <exception cref="TypeLoadException" />
+        /// <exception cref="TargetInvocationException" />
+        /// <exception cref="UnauthorizedAccessException" />
+        public static Object Get(Type T, Boolean PresistObject) {
+            if (PresistObject) {
+                if (!ConfigMapper._Configs.ContainsKey(T)) {
+                    Load(T);
+                }
+
+                return ConfigMapper._Configs[T];
+            }
+
+            String Name = GetName(T);
+            return ConfigLoader.LoadConfig(T, Name);
+        }
+
+        /// <summary>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</summary>
+        /// <typeparam name="T">The config object to be returned</typeparam>
+        /// <param name="PresistObject">If true the object is stored in memory, if false then the config is just loaded from the file</param>
+        /// <returns>Retrieves the config using the given type, either loads it from memory or from the file, if none are succesfull a new instance is created and saved</returns>
+        /// <exception cref="AmbiguousMatchException" />
+        /// <exception cref="ArgumentException" />
+        /// <exception cref="ArgumentNullException" />
+        /// <exception cref="ArgumentOutOfRangeException" />
+        /// <exception cref="COMException" />
+        /// <exception cref="DirectoryNotFoundException" />
+        /// <exception cref="FileNotFoundException" />
+        /// <exception cref="InvalidComObjectException" />
+        /// <exception cref="IOException" />
+        /// <exception cref="MethodAccessException" />
+        /// <exception cref="MemberAccessException" />
+        /// <exception cref="MissingMethodException" />
+        /// <exception cref="NotSupportedException" />
+        /// <exception cref="PathTooLongException" />
+        /// <exception cref="SecurityException" />
+        /// <exception cref="TypeLoadException" />
+        /// <exception cref="TargetInvocationException" />
+        /// <exception cref="UnauthorizedAccessException" />
+        public static T Get<T>(Boolean PresistObject) {            
+            Type Temp = typeof(T);
+
+            if (PresistObject) {
+                if (!ConfigMapper._Configs.ContainsKey(Temp)) {
+                    Load(Temp);
+                }
+
+                return (T)ConfigMapper._Configs[Temp];
+            }
+
+            String Name = GetName(Temp);
+            return ConfigLoader.LoadConfig<T>(Name);
+        }
     }
 }

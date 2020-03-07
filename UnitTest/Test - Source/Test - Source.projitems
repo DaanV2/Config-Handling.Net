@@ -6,9 +6,10 @@
     <SharedGUID>7c1dfdd9-efe7-4b43-9b53-d518d8f0b44e</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Test___Source</Import_RootNamespace>
+    <Import_RootNamespace>Config.Test</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\ConfigMapperTest\ConfigMapperTest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\FakeConfig\FakeConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tests.cs" />
   </ItemGroup>

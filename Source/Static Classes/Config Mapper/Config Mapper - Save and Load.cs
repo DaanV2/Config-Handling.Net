@@ -64,7 +64,6 @@ namespace DaanV2.Config {
         /// <exception cref="SecurityException" />
         /// <exception cref="UnauthorizedAccessException" />
         public static void Save(Type T) {
-
             if (ConfigMapper._Configs.ContainsKey(T)) {
                 ConfigLoader.SaveConfig(_Configs[T], GetName(T));
             }
