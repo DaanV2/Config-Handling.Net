@@ -75,6 +75,8 @@ namespace DaanV2.Config {
                 //Close stream if open
                 if (writer != null)
                     writer.Close();
+
+                ErrorSaving(Filepath, ex);
             }
 #endif
 

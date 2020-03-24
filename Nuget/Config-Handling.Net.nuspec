@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <license type="file">LICENSE.txt</license>
         <projectUrl>https://github.com/DaanV2/Config-Handling.Net</projectUrl>
-        <copyright>aaDn Verstraten 2018</copyright>
+        <copyright>Daan Verstraten 2018</copyright>
         <tags>config config-management</tags>
         <repository type="git" url="https://github.com/DaanV2/Config-Handling.Net" />
         <releaseNotes>Added better error handling for loading</releaseNotes>
