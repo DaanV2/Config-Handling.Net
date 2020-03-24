@@ -3,7 +3,7 @@
     <metadata>
         <!-- Required elements-->
         <id>Config-Handling.Net</id>
-        <version>1.0.8</version>
+        <version>1.0.9</version>
         <description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location.</description>
         <authors>Daan Verstraten</authors>
 		<title>Config-Handling.Net</title>
@@ -15,7 +15,7 @@
         <copyright>aaDn Verstraten 2018</copyright>
         <tags>config config-management</tags>
         <repository type="git" url="https://github.com/DaanV2/Config-Handling.Net" />
-        <releaseNotes>Added the ability to not use presistance on config objects</releaseNotes>
+        <releaseNotes>Added better error handling for loading</releaseNotes>
         <icon>images\icon.png</icon>
         <dependencies>
             <group targetFramework=".NETCoreApp3.0" />

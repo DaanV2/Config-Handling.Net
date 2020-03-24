@@ -75,8 +75,8 @@ namespace DaanV2.Config {
                     //Close of the stream, write error report
                     if (reader != null)
                         reader.Close();
-                    File.Move(Filepath, Filepath + ".corrupt");
-                    File.WriteAllText(Filepath + ".corrupt.txt", ex.Message + "\r\n\r\n" + ex.StackTrace);
+
+                    ErrorLoading(Filepath, ex);
                 }
 #endif
                 Lock.Set();
@@ -148,8 +148,7 @@ namespace DaanV2.Config {
                     if (reader != null)
                         reader.Close();
 
-                    File.Move(Filepath, Filepath + ".corrupt");
-                    File.WriteAllText(Filepath + ".corrupt.txt", ex.Message);
+                    ErrorLoading(Filepath, ex);
                 }
 #endif
                 Lock.Set();
