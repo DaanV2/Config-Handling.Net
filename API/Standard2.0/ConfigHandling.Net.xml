@@ -236,6 +236,11 @@
             <param name="Filepath">The filepath to the config file</param>
             <param name="ex">The exception that has been throw</param>
         </member>
+        <member name="M:DaanV2.Config.ConfigLoader.ErrorSaving(System.String,System.Exception)">
+            <summary>Handles and writes the appropriate message </summary>
+            <param name="Filepath">The filepath to the config file</param>
+            <param name="ex">The exception that has been throw</param>
+        </member>
         <member name="M:DaanV2.Config.ConfigLoader.GetLock(System.String)">
             <summary>Returns a lock that is assigned to the specified filepath</summary>
             <param name="Filepath">The filepath to return a lock for</param>

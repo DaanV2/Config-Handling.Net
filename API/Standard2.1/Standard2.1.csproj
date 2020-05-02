@@ -14,9 +14,9 @@
     <RepositoryUrl>https://github.com/DaanV2/Config-Handling.Net</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>config;config-management;</PackageTags>
-    <AssemblyVersion>1.0.9.0</AssemblyVersion>
+    <AssemblyVersion>1.0.10.0</AssemblyVersion>
     <SignAssembly>false</SignAssembly>
-    <FileVersion>1.0.9.0</FileVersion>
+    <FileVersion>1.0.10.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -57,7 +57,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="set Framework=netstandard2.1&#xD;&#xA;if '$(ConfigurationName)' == 'Release' (&#xD;&#xA;    if '$(PlatformName)' == 'AnyCPU' (&#xD;&#xA;        mkdir &quot;$(SolutionDir)Nuget\lib\%25Framework%25\&quot;&#xD;&#xA;        copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\lib\%25Framework%25\&quot;&#xD;&#xA;    ) ELSE (&#xD;&#xA;        mkdir &quot;$(SolutionDir)Nuget\runtimes\win10-$(PlatformName)\lib\%25Framework%25\&quot;&#xD;&#xA;        copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\runtimes\win10-$(PlatformName)\lib\%25Framework%25\&quot;&#xD;&#xA;     )&#xD;&#xA;)" />
+    <Exec Command="set Framework=netstandard2.1&#xD;&#xA;if '$(ConfigurationName)' == 'Release' (&#xD;&#xA;    mkdir &quot;$(SolutionDir)Nuget\assemblies\%25Framework%25-$(PlatformName)\&quot;&#xD;&#xA;    copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\assemblies\%25Framework%25-$(PlatformName)\&quot;&#xD;&#xA;)" />
   </Target>
 
   <Import Project="..\..\Source\Source.projitems" Label="Shared" />
