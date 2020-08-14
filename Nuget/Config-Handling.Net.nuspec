@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-
     <metadata>
         <!-- Required elements-->
         <id>Config-Handling.Net</id>
-        <version>1.0.10</version>
+        <version>1.0.12</version>
         <description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location.</description>
         <authors>Daan Verstraten</authors>
 		<title>Config-Handling.Net</title>
@@ -12,7 +11,7 @@
         <!-- Optional elements -->
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <license type="file">LICENSE.txt</license>
-        <projectUrl>https://daanv2.engineer/software/confighandlingnet</projectUrl>
+        <projectUrl>https://github.com/DaanV2/Config-Handling.Net</projectUrl>
         <copyright>Daan Verstraten 2018</copyright>
         <tags>config config-management</tags>
         <repository type="git" url="https://github.com/DaanV2/Config-Handling.Net" />
@@ -25,89 +24,37 @@
             <group targetFramework=".NETStandard2.0" />
             <group targetFramework=".NETStandard2.1" />
         </dependencies>
-		<references>
-			<group targetFramework="net48">
-				<reference file="ConfigHandling.Net.dll"/>
-				<reference file="ConfigHandling.Net.xml"/>
-			</group>
-			<group targetFramework="netcoreapp3.0">
-				<reference file="ConfigHandling.Net.dll"/>
-				<reference file="ConfigHandling.Net.xml"/>
-				<reference file="ConfigHandling.Net.deps.json"/>
-			</group>
-			<group targetFramework="netcoreapp3.1">
-				<reference file="ConfigHandling.Net.dll"/>
-				<reference file="ConfigHandling.Net.xml"/>
-				<reference file="ConfigHandling.Net.deps.json"/>
-			</group>
-			<group targetFramework="netstandard2.0">
-				<reference file="ConfigHandling.Net.dll"/>
-				<reference file="ConfigHandling.Net.xml"/>
-				<reference file="ConfigHandling.Net.deps.json"/>
-			</group>
-			<group targetFramework="netstandard2.1">
-				<reference file="ConfigHandling.Net.dll"/>
-				<reference file="ConfigHandling.Net.xml"/>
-				<reference file="ConfigHandling.Net.deps.json"/>
-			</group>
-		</references>
 
         <!-- ... -->
     </metadata>
     <!-- Optional 'files' node -->
     <files>
-        <file src=".\images\icon.png" target="images" />
+        <file src=".\images\icon.png" target="images\" />
         <file src="..\LICENSE.txt" target="" />
 
-		<!-- If nothing works -->
+        <!-- Any CPU -->
 		<file src="assemblies\net48-AnyCPU\*.*" target="lib\net48" exclude="*.tmp;*.pdb"/>
         <file src="assemblies\netcoreapp3.0-AnyCPU\*.*" target="lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
         <file src="assemblies\netcoreapp3.1-AnyCPU\*.*" target="lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
         <file src="assemblies\netstandard2.0-AnyCPU\*.*" target="lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
         <file src="assemblies\netstandard2.1-AnyCPU\*.*" target="lib\netstandard2.1" exclude="*.tmp;*.pdb"/>
-
-        <!-- AnyCPU -->
-		<file src="assemblies\net48-AnyCPU\*.*" target="ref\net48" exclude="*.tmp;*.pdb"/>		
-        <file src="assemblies\netcoreapp3.0-AnyCPU\*.*" target="ref\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netcoreapp3.1-AnyCPU\*.*" target="ref\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.0-AnyCPU\*.*" target="ref\netstandard2.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.1-AnyCPU\*.*" target="ref\netstandard2.1" exclude="*.tmp;*.pdb"/>
-		
-		<!-- AnyCPU RunTimes -->
-		<file src="assemblies\net48-AnyCPU\*.*" target="runtimes\win\lib\net48" exclude="*.tmp;*.pdb"/>
-		<file src="assemblies\net48-AnyCPU\*.*" target="runtimes\win10\lib\net48" exclude="*.tmp;*.pdb"/>
-		<file src="assemblies\netcoreapp3.0-AnyCPU\*.*" target="runtimes\win\lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
-		<file src="assemblies\netcoreapp3.0-AnyCPU\*.*" target="runtimes\win10\lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netcoreapp3.1-AnyCPU\*.*" target="runtimes\win\lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netcoreapp3.1-AnyCPU\*.*" target="runtimes\win10\lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.0-AnyCPU\*.*" target="runtimes\win\lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.0-AnyCPU\*.*" target="runtimes\win10\lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.1-AnyCPU\*.*" target="runtimes\win\lib\netstandard2.1" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.1-AnyCPU\*.*" target="runtimes\win10\lib\netstandard2.1" exclude="*.tmp;*.pdb"/>
 				
 		<!-- x64 -->
-		<file src="assemblies\net48-x64\*.*" target="runtimes\win-x64\lib\net48" exclude="*.tmp;*.pdb"/>
-		<file src="assemblies\net48-x64\*.*" target="runtimes\win10-x64\lib\net48" exclude="*.tmp;*.pdb"/>
-		<file src="assemblies\netcoreapp3.0-x64\*.*" target="runtimes\win-x64\lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
-		<file src="assemblies\netcoreapp3.0-x64\*.*" target="runtimes\win10-x64\lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netcoreapp3.1-x64\*.*" target="runtimes\win-x64\lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netcoreapp3.1-x64\*.*" target="runtimes\win10-x64\lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.0-x64\*.*" target="runtimes\win-x64\lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.0-x64\*.*" target="runtimes\win10-x64\lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.1-x64\*.*" target="runtimes\win-x64\lib\netstandard2.1" exclude="*.tmp;*.pdb"/>			
-        <file src="assemblies\netstandard2.1-x64\*.*" target="runtimes\win10-x64\lib\netstandard2.1" exclude="*.tmp;*.pdb"/>			
+		<!-- Future stuff 
+		<file src="runtimes\win-x64\lib\net48\*.dll" target="runtimes\win10-x64\lib\net48\" />
+		<file src="runtimes\win-x64\lib\netcoreapp3.0\*.dll" target="runtimes\win10-x64\lib\netcoreapp3.0\" />
+        <file src="runtimes\win-x64\lib\netcoreapp3.1\*.dll" target="runtimes\win10-x64\lib\netcoreapp3.1\" />
+        <file src="runtimes\win-x64\lib\netstandard2.0\*.dll" target="runtimes\win10-x64\lib\netstandard2.0\" />
+        <file src="runtimes\win-x64\lib\netstandard2.1\*.dll" target="runtimes\win10-x64\lib\netstandard2.1\" />
+		-->
 		
 		<!-- x86 -->
-		<file src="assemblies\net48-x86\*.*" target="runtimes\win-x86\lib\net48" exclude="*.tmp;*.pdb"/>
-		<file src="assemblies\net48-x86\*.*" target="runtimes\win10-x86\lib\net48" exclude="*.tmp;*.pdb"/>
-		<file src="assemblies\netcoreapp3.0-x86\*.*" target="runtimes\win-x86\lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
-		<file src="assemblies\netcoreapp3.0-x86\*.*" target="runtimes\win10-x86\lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netcoreapp3.1-x86\*.*" target="runtimes\win-x86\lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netcoreapp3.1-x86\*.*" target="runtimes\win10-x86\lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.0-x86\*.*" target="runtimes\win-x86\lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.0-x86\*.*" target="runtimes\win10-x86\lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netstandard2.1-x86\*.*" target="runtimes\win-x86\lib\netstandard2.1" exclude="*.tmp;*.pdb"/>			
-        <file src="assemblies\netstandard2.1-x86\*.*" target="runtimes\win10-x86\lib\netstandard2.1" exclude="*.tmp;*.pdb"/>			
-
+		<!-- Future stuff 
+		<file src="runtimes\win-x86\lib\net48\*.dll" target="runtimes\win10-x86\lib\net48\" />
+		<file src="runtimes\win-x86\lib\netcoreapp3.0\*.dll" target="runtimes\win10-x86\lib\netcoreapp3.0\" />
+        <file src="runtimes\win-x86\lib\netcoreapp3.1\*.dll" target="runtimes\win10-x86\lib\netcoreapp3.1\" />
+        <file src="runtimes\win-x86\lib\netstandard2.0\*.dll" target="runtimes\win10-x86\lib\netstandard2.0\" />
+        <file src="runtimes\win-x86\lib\netstandard2.1\*.dll" target="runtimes\win10-x86\lib\netstandard2.1\" />
+		-->		
     </files>
 </package>
