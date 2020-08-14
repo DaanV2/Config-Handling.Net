@@ -21,19 +21,20 @@ namespace DaanV2.Config {
     public static partial class ConfigOptions {
         /// <summary>Initializes a new instance of <see cref="ConfigOptions"/></summary>
         static ConfigOptions() {
-            ConfigOptions._ConfigFolder = AppDomain.CurrentDomain.BaseDirectory + "configs\\";
+            String Folder = AppDomain.CurrentDomain.BaseDirectory;
+
+            if (!Folder.EndsWith("\\")) { Folder += "\\"; }
+            Folder += "configs\\";
+
+            ConfigOptions._ConfigFolder = Folder;
             ConfigOptions._ConfigExtension = ".config";
             ConfigOptions._FilepathOptions = AppDomain.CurrentDomain.BaseDirectory + "config.ini";
             ConfigOptions._ConfigSerializerName = "json";
             ConfigOptions._LockCount = Environment.ProcessorCount;
 
             //If the .ini file doesnt exists then make it else load it
-            if (!HasFile()) {
-                Save();
-            }
-            else {
-                Load();
-            }
+            if (!HasFile()) { Save(); }
+            else { Load(); }
         }
     }
 }

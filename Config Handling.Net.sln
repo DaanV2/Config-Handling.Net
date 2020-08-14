@@ -39,11 +39,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Debugger.Net4.8", "Debugger
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Source\Source.projitems*{00a1bbd4-1430-406c-bed3-cd6c204aab45}*SharedItemsImports = 5
+		UnitTest\Test - Source\Test - Source.projitems*{00a1bbd4-1430-406c-bed3-cd6c204aab45}*SharedItemsImports = 5
+		Source\Source.projitems*{201d4500-e4bc-46b8-80e9-57ff321bd016}*SharedItemsImports = 5
+		Source\Source.projitems*{2448fb86-2a8c-4378-bccb-7faaf497e8ab}*SharedItemsImports = 5
 		Source\Source.projitems*{27e779d8-96e0-4d62-a499-e57b4b358b58}*SharedItemsImports = 4
 		UnitTest\Test - Source\Test - Source.projitems*{27e779d8-96e0-4d62-a499-e57b4b358b58}*SharedItemsImports = 4
 		Source\Source.projitems*{7be2b6ac-c642-4c82-9bb6-49c280b21a6d}*SharedItemsImports = 13
 		UnitTest\Test - Source\Test - Source.projitems*{7c1dfdd9-efe7-4b43-9b53-d518d8f0b44e}*SharedItemsImports = 13
 		Source\Source.projitems*{9b91c88f-52ff-42a9-83b6-2aed5d94249c}*SharedItemsImports = 4
+		Source\Source.projitems*{a838d268-ca30-46b3-a412-b2771b63e30b}*SharedItemsImports = 5
+		Source\Source.projitems*{dfad159a-8060-4398-9256-d928e7d36faa}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
