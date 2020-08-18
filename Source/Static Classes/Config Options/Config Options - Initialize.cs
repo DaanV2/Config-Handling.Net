@@ -28,7 +28,7 @@ namespace DaanV2.Config {
 
             ConfigOptions._ConfigFolder = Folder;
             ConfigOptions._ConfigExtension = ".config";
-            ConfigOptions._FilepathOptions = AppDomain.CurrentDomain.BaseDirectory + "config.ini";
+            ConfigOptions._FilepathOptions = Folder + "config.ini";
             ConfigOptions._ConfigSerializerName = "json";
             ConfigOptions._LockCount = Environment.ProcessorCount;
 
