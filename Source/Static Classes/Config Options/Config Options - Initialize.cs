@@ -24,9 +24,8 @@ namespace DaanV2.Config {
             String Folder = AppDomain.CurrentDomain.BaseDirectory;
 
             if (!Folder.EndsWith("\\")) { Folder += "\\"; }
-            Folder += "configs\\";
 
-            ConfigOptions._ConfigFolder = Folder;
+            ConfigOptions._ConfigFolder = Folder + "configs\\";
             ConfigOptions._ConfigExtension = ".config";
             ConfigOptions._FilepathOptions = Folder + "config.ini";
             ConfigOptions._ConfigSerializerName = "json";

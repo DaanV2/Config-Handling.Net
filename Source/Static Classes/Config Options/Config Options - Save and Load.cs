@@ -22,6 +22,11 @@ namespace DaanV2.Config {
         /// <summary>Save this class into the config.ini file</summary>
         public static void Save() {
             //Write the config file
+            FileInfo FI = new FileInfo(FilepathOptions);
+
+            //Ensure directory is created
+            FI.Directory.Create();
+
             StreamWriter writer = new StreamWriter(ConfigOptions._FilepathOptions, false);
             writer.WriteLine($"Config Extension={ConfigOptions._ConfigExtension}");
             writer.WriteLine($"Config Folder={ConfigOptions._ConfigFolder.Replace(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\'), String.Empty)}");
@@ -48,9 +53,9 @@ namespace DaanV2.Config {
                 }
                 else if (L.StartsWith("Lock Count=")) {
                     String Number = L.Remove(0, 11).Trim();
-                    Int32 Out;
-                    if (Int32.TryParse(Number, out Out))
+                    if (Int32.TryParse(Number, out Int32 Out)) {
                         ConfigOptions._LockCount = Out;
+                    }
                 }
             }
 

@@ -3,7 +3,7 @@
     <metadata>
         <!-- Required elements-->
         <id>Config-Handling.Net</id>
-        <version>1.0.13</version>
+        <version>1.0.14</version>
         <description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location.</description>
         <authors>Daan Verstraten</authors>
 		<title>Config-Handling.Net</title>
