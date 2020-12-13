@@ -31,14 +31,14 @@ namespace DaanV2.Config.Serialization {
         /// <returns>Deserializes the given stream into the specified object</returns>
         public T Deserialize(Stream Reader) {
 #if NETCORE
-            JsonSerializerOptions Options = new JsonSerializerOptions();
+            var Options = new JsonSerializerOptions();
             ValueTask<Object> VTask = JsonSerializer.DeserializeAsync(Reader, this._ForType, Options);
             VTask.AsTask().Wait();
 
             return (T)VTask.Result;
 #else
-            DataContractJsonSerializer Deserializer = new DataContractJsonSerializer(this._ForType);
-            T Out = (T)Deserializer.ReadObject(Reader);
+            var Deserializer = new DataContractJsonSerializer(this._ForType);
+            var Out = (T)Deserializer.ReadObject(Reader);
             return Out;
 #endif
         }

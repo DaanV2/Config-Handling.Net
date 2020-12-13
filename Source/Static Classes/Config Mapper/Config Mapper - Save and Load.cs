@@ -83,7 +83,7 @@ namespace DaanV2.Config {
         /// <exception cref="SecurityException" />
         /// <exception cref="UnauthorizedAccessException" />
         public static void SaveAll() {
-            Type[] Keys = new Type[ConfigMapper._Configs.Count];
+            var Keys = new Type[ConfigMapper._Configs.Count];
             ConfigMapper._Configs.Keys.CopyTo(Keys, 0);
             Type Key;
             Object Item;

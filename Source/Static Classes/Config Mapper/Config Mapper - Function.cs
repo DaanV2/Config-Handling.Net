@@ -26,8 +26,7 @@ namespace DaanV2.Config {
         /// <exception cref="ArgumentNullException" />
         public static void Remove(Type T) {
             if (ConfigMapper.Configs.ContainsKey(T)) {
-                Object Out = null;
-                ConfigMapper._Configs.TryRemove(T, out Out);
+                ConfigMapper._Configs.TryRemove(T, out _);
             }
         }
 
@@ -36,8 +35,7 @@ namespace DaanV2.Config {
         /// <exception cref="ArgumentNullException" />
         public static void Remove(Object T) {
             if (ConfigMapper._Configs.ContainsKey(T.GetType())) {
-                Object Out = null;
-                ConfigMapper._Configs.TryRemove(T.GetType(), out Out);
+                ConfigMapper._Configs.TryRemove(T.GetType(), out _);
             }
         }
 
@@ -65,17 +63,20 @@ namespace DaanV2.Config {
             }
 
             //Retrieve attributes
-            ConfigAttribute Ca = (ConfigAttribute)Attribute.GetCustomAttribute(T, typeof(ConfigAttribute));
+            var Ca = (ConfigAttribute)Attribute.GetCustomAttribute(T, typeof(ConfigAttribute));
             String Out = String.Empty;
 
             if (Ca == null || (Ca.SubFolder == null && Ca.Name == null)) {
                 if (T.IsGenericType) {
                     Type[] Types = T.GetGenericArguments();
-                    StringBuilder B = new StringBuilder(Types.Length * 20);
+                    var B = new StringBuilder(Types.Length * 20);
+
+                    //Convert the name safely
                     B.Append(T.Name.Replace("`", "-"));
 
+                    //Append any generic arguments
                     for (Int32 I = 0; I < Types.Length; I++) {
-                        B.Append("_");
+                        B.Append('_');
                         B.Append(GetName(Types[I]));
                     }
 

@@ -25,7 +25,7 @@ namespace DaanV2.Config {
         /// <param name="ex">The exception that has been throw</param>
         private static void ErrorLoading(String Filepath, Exception ex) {
             String ErrorPath = Filepath + DateTime.Now.ToString() + ".corrupt";
-            StringBuilder MessageBuilder = new StringBuilder(2000);
+            var MessageBuilder = new StringBuilder(2000);
             MessageBuilder.AppendLine("ConfigHandling.Loader: ");
 
             while (ex != null) {
@@ -55,7 +55,7 @@ namespace DaanV2.Config {
         /// <param name="ex">The exception that has been throw</param>
         private static void ErrorSaving(String Filepath, Exception ex) {
             String ErrorPath = Filepath + DateTime.Now.ToString() + ".corrupt";
-            StringBuilder MessageBuilder = new StringBuilder(2000);
+            var MessageBuilder = new StringBuilder(2000);
             MessageBuilder.AppendLine("ConfigHandling.Saver: ");
 
             while (ex != null) {

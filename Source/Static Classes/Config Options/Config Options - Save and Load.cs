@@ -22,12 +22,12 @@ namespace DaanV2.Config {
         /// <summary>Save this class into the config.ini file</summary>
         public static void Save() {
             //Write the config file
-            FileInfo FI = new FileInfo(FilepathOptions);
+            var FI = new FileInfo(FilepathOptions);
 
             //Ensure directory is created
             FI.Directory.Create();
 
-            StreamWriter writer = new StreamWriter(ConfigOptions._FilepathOptions, false);
+            var writer = new StreamWriter(ConfigOptions._FilepathOptions, false);
             writer.WriteLine($"Config Extension={ConfigOptions._ConfigExtension}");
             writer.WriteLine($"Config Folder={ConfigOptions._ConfigFolder.Replace(AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\'), String.Empty)}");
             writer.WriteLine($"Config Serializer Name={ConfigOptions._ConfigSerializerName}");
@@ -42,20 +42,37 @@ namespace DaanV2.Config {
 
             //Loop through all lines
             foreach (String L in Lines) {
-                if (L.StartsWith("Config Extension=")) {
-                    ConfigOptions._ConfigExtension = L.Remove(0, 17).Trim();
+                Int32 I = L.IndexOf("=");
+
+                if (I < 0) {
+                    continue;
                 }
-                else if (L.StartsWith("Config Folder=")) {
-                    ConfigOptions._ConfigFolder = L.Remove(0, 14).Trim();
-                }
-                else if (L.StartsWith("Config Serializer Name=")) {
-                    ConfigOptions._ConfigSerializerName = L.Remove(0, 23).Trim();
-                }
-                else if (L.StartsWith("Lock Count=")) {
-                    String Number = L.Remove(0, 11).Trim();
-                    if (Int32.TryParse(Number, out Int32 Out)) {
-                        ConfigOptions._LockCount = Out;
-                    }
+
+                String Name = L.Substring(0, I);
+#if NETCORE
+                String Value = L[(I + 1)..].Trim();
+#else
+                String Value = L.Substring(I + 1, L.Length - (I + 1)).Trim();
+#endif
+
+                switch (Name) {
+                    case "Config Extension":
+                        ConfigOptions._ConfigExtension = Value;
+                        break;
+
+                    case "Config Folder":
+                        ConfigOptions._ConfigFolder = Value;
+                        break;
+
+                    case "Config Serializer Name":
+                        ConfigOptions._ConfigSerializerName = Value;
+                        break;
+
+                    case "Lock Count":
+                        if (Int32.TryParse(Value, out Int32 Out)) {
+                            ConfigOptions._LockCount = Out;
+                        }
+                        break;
                 }
             }
 

@@ -73,8 +73,9 @@ namespace DaanV2.Config {
                 }
                 catch (Exception ex) {
                     //Close of the stream, write error report
-                    if (reader != null)
+                    if (reader != null) {
                         reader.Close();
+                    }
 
                     ErrorLoading(Filepath, ex);
                 }
@@ -89,7 +90,7 @@ namespace DaanV2.Config {
 
                 //Check if the object has the given object
                 if (Out.GetType().GetInterface(nameof(INewConfig)) != null) {
-                    INewConfig Temp = (INewConfig)Out;
+                    var Temp = (INewConfig)Out;
                     Temp.SetNewInformation();
                 }
 
@@ -145,8 +146,9 @@ namespace DaanV2.Config {
 #if !DEBUG
                 }
                 catch (Exception ex) {
-                    if (reader != null)
+                    if (reader != null) {
                         reader.Close();
+                    }
 
                     ErrorLoading(Filepath, ex);
                 }
@@ -158,7 +160,7 @@ namespace DaanV2.Config {
                 Out = Activator.CreateInstance<T>();
 
                 if (Out.GetType().GetInterface(nameof(INewConfig)) != null) {
-                    INewConfig Temp = (INewConfig)Out;
+                    var Temp = (INewConfig)Out;
                     Temp.SetNewInformation();
                 }
 

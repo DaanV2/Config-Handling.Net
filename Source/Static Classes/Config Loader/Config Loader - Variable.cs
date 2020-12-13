@@ -22,12 +22,12 @@ using DaanV2.Config.Serialization;
 namespace DaanV2.Config {
     public static partial class ConfigLoader {
         /// <summary>The locks used for to make sure config files can only be accesed by 1 thread at a time</summary>
-        private static EventWaitHandle[] _Locks;
+        private static readonly EventWaitHandle[] _Locks;
 
         /// <summary>The current serializing factory that is being used</summary>
         private static IConfigSerializerFactory _SerializerFactory;
 
         /// <summary>The internal dictionary of factories</summary>
-        private static ConcurrentDictionary<String, IConfigSerializerFactory> _Factories;
+        private static readonly ConcurrentDictionary<String, IConfigSerializerFactory> _Factories;
     }
 }

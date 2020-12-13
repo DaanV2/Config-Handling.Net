@@ -31,10 +31,10 @@ namespace DaanV2.Config.Serialization {
         /// <param name="Writer">The given stream to write in</param>
         public void Serialize(T O, Stream Writer) {
 #if NETCORE
-            JsonSerializerOptions Options = new JsonSerializerOptions();
+            var Options = new JsonSerializerOptions();
             JsonSerializer.Serialize(new Utf8JsonWriter(Writer), O, this._ForType, Options);
 #else
-            DataContractJsonSerializer Serializer = new DataContractJsonSerializer(this._ForType);
+            var Serializer = new DataContractJsonSerializer(this._ForType);
             Serializer.WriteObject(Writer, O);
 #endif
         }

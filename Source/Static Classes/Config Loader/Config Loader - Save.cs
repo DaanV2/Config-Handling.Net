@@ -38,7 +38,7 @@ namespace DaanV2.Config {
         public static void SaveConfig(Object ConfigObject, String Filename) {
             //Get file info on the file to save to
             String Filepath = ConfigOptions.ConfigFolder + Filename + ConfigOptions.ConfigExtension;
-            FileInfo FI = new FileInfo(Filepath);
+            var FI = new FileInfo(Filepath);
             EventWaitHandle Lock = ConfigLoader.GetLock(Filepath);
 
             //Check parent directory
@@ -73,8 +73,9 @@ namespace DaanV2.Config {
             catch (Exception ex) {
 #pragma warning restore 168
                 //Close stream if open
-                if (writer != null)
+                if (writer != null) {
                     writer.Close();
+                }
 
                 ErrorSaving(Filepath, ex);
             }
