@@ -3,7 +3,7 @@
     <metadata>
         <!-- Required elements-->
         <id>Config-Handling.Net</id>
-        <version>1.0.14</version>
+        <version>1.1.0</version>
         <description>ConfigHandling.Net takes care of all your config or options objects. It takes care of saving, loading, and persistence of objects in memory. Config objects are saved in a centralized location.</description>
         <authors>Daan Verstraten</authors>
 		<title>Config-Handling.Net</title>
@@ -18,8 +18,8 @@
         <releaseNotes>Fixing config.ini</releaseNotes>
         <icon>images\icon.png</icon>
         <dependencies>
-            <group targetFramework=".NETCoreApp3.0" />
             <group targetFramework=".NETCoreApp3.1" />
+            <group targetFramework=".NETCore5.0" />
             <group targetFramework=".NETFramework4.8" />
             <group targetFramework=".NETStandard2.0" />
             <group targetFramework=".NETStandard2.1" />
@@ -34,8 +34,8 @@
 
         <!-- Any CPU -->
 		<file src="assemblies\net48-AnyCPU\*.*" target="lib\net48" exclude="*.tmp;*.pdb"/>
-        <file src="assemblies\netcoreapp3.0-AnyCPU\*.*" target="lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
         <file src="assemblies\netcoreapp3.1-AnyCPU\*.*" target="lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
+        <file src="assemblies\netcore50-AnyCPU\*.*" target="lib\netcore50" exclude="*.tmp;*.pdb"/>
         <file src="assemblies\netstandard2.0-AnyCPU\*.*" target="lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
         <file src="assemblies\netstandard2.1-AnyCPU\*.*" target="lib\netstandard2.1" exclude="*.tmp;*.pdb"/>
 				
