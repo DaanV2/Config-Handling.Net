@@ -16,9 +16,11 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System.IO;
 
-namespace DaanV2.Config.Serialization {
+namespace DaanV2.Config.Serialization
+{
     /// <summary>The interface responsible for telling how serializers should behave</summary>
-    public interface IConfigSerializer<TIn> {
+    public interface IConfigSerializer<TIn>
+    {
         /// <summary>Serializes the given object into the specified stream</summary>
         /// <param name="O">The object to serialize</param>
         /// <param name="Writer">The stream to write to</param>

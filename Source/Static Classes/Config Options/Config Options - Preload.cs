@@ -15,10 +15,13 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
-namespace DaanV2.Config {
-    public static partial class ConfigOptions {
+namespace DaanV2.Config
+{
+    public static partial class ConfigOptions
+    {
         /// <summary>Preloads this class and its values.</summary>
-        public static void Preload() {
+        public static void Preload()
+        {
             System.Threading.Thread.Sleep(10);
         }
     }

@@ -16,22 +16,27 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
-namespace DaanV2.Config {
-    public partial class ConfigAttribute {
+namespace DaanV2.Config
+{
+    public partial class ConfigAttribute
+    {
         /// <summary>Gets or sets the name of this object</summary>
-        public String Name {
+        public String Name
+        {
             get => this._Name;
             set => this._Name = value;
         }
 
         /// <summary>Gets or sets the category of this object</summary>
-        public String Category {
+        public String Category
+        {
             get => this._Category;
             set => this._Category = value;
         }
 
         /// <summary>Gets or sets the subfolder for this config</summary>
-        public String SubFolder {
+        public String SubFolder
+        {
             get => this._SubFolder;
             set => this._SubFolder = value;
         }

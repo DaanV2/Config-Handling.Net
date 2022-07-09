@@ -16,8 +16,10 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
-namespace DaanV2.Config.Serialization {
-    public partial class XmlSerializerFactory : IConfigSerializerFactory {
+namespace DaanV2.Config.Serialization
+{
+    public partial class XmlSerializerFactory : IConfigSerializerFactory
+    {
         /// <summary>The name used for identifying this factory</summary>
         private readonly String _Name = "Xml";
 
@@ -27,14 +29,16 @@ namespace DaanV2.Config.Serialization {
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <typeparam name="TOut">The object type to deserialize</typeparam>
         /// <returns>Returns a serializer that is capable of deserializing the given object type</returns>
-        public IConfigDeserializer<TOut> GetDeserializer<TOut>() {
+        public IConfigDeserializer<TOut> GetDeserializer<TOut>()
+        {
             return new XmlSerializer<TOut>();
         }
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
         /// <returns>Returns a serializer that is capable of deserializing the given object type</returns>
-        public IConfigDeserializer<Object> GetDeserializer(Type ForType) {
+        public IConfigDeserializer<Object> GetDeserializer(Type ForType)
+        {
             return new XmlSerializer<Object>(ForType);
         }
 
@@ -42,14 +46,16 @@ namespace DaanV2.Config.Serialization {
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
         /// <typeparam name="TIn">The object type to serialize</typeparam>
         /// <returns>Returns a serializer that is capable of serializing the given object type/></returns>
-        public IConfigSerializer<TIn> GetSerializer<TIn>() {
+        public IConfigSerializer<TIn> GetSerializer<TIn>()
+        {
             return new XmlSerializer<TIn>();
         }
 
         /// <summary>Returns a serializer that is capable of serializing the given object type</summary>
         /// <param name="ForType">The object type to serialize</param>
         /// <returns>Returns a serializer that is capable of serializing the given object type/></returns>
-        public IConfigSerializer<Object> GetSerializer(Type ForType) {
+        public IConfigSerializer<Object> GetSerializer(Type ForType)
+        {
             return new XmlSerializer<Object>(ForType);
         }
     }

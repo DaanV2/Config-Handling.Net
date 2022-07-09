@@ -16,8 +16,10 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
-namespace DaanV2.Config {
-    public partial class ConfigAttribute {
+namespace DaanV2.Config
+{
+    public partial class ConfigAttribute
+    {
         /// <summary>Gets or sets the name of this object</summary>
         private String _Name;
 

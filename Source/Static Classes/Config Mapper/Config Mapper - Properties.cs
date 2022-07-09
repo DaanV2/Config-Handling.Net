@@ -17,8 +17,10 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Collections.Concurrent;
 
-namespace DaanV2.Config {
-    public static partial class ConfigMapper {
+namespace DaanV2.Config
+{
+    public static partial class ConfigMapper
+    {
 
         /// <summary>Gets or sets the dataset of types to configs</summary>
         public static ConcurrentDictionary<Type, Object> Configs => ConfigMapper._Configs;

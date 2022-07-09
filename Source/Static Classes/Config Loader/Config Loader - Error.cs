@@ -18,17 +18,21 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace DaanV2.Config {
-    public static partial class ConfigLoader {
+namespace DaanV2.Config
+{
+    public static partial class ConfigLoader
+    {
         /// <summary>Handles and writes the appropriate message </summary>
         /// <param name="Filepath">The filepath to the config file</param>
         /// <param name="ex">The exception that has been throw</param>
-        private static void ErrorLoading(String Filepath, Exception ex) {
+        private static void ErrorLoading(String Filepath, Exception ex)
+        {
             String ErrorPath = Filepath + DateTime.Now.ToString() + ".corrupt";
             var MessageBuilder = new StringBuilder(2000);
             MessageBuilder.AppendLine("ConfigHandling.Loader: ");
 
-            while (ex != null) {
+            while (ex != null)
+            {
                 MessageBuilder.AppendLine(ex.Message);
                 MessageBuilder.AppendLine("\r\n\r\n");
                 MessageBuilder.AppendLine(ex.StackTrace);
@@ -39,7 +43,8 @@ namespace DaanV2.Config {
 
             String Message = MessageBuilder.ToString();
 
-            if (File.Exists(ErrorPath)) {
+            if (File.Exists(ErrorPath))
+            {
                 File.Delete(ErrorPath);
             }
 
@@ -53,12 +58,14 @@ namespace DaanV2.Config {
         /// <summary>Handles and writes the appropriate message </summary>
         /// <param name="Filepath">The filepath to the config file</param>
         /// <param name="ex">The exception that has been throw</param>
-        private static void ErrorSaving(String Filepath, Exception ex) {
+        private static void ErrorSaving(String Filepath, Exception ex)
+        {
             String ErrorPath = Filepath + DateTime.Now.ToString() + ".corrupt";
             var MessageBuilder = new StringBuilder(2000);
             MessageBuilder.AppendLine("ConfigHandling.Saver: ");
 
-            while (ex != null) {
+            while (ex != null)
+            {
                 MessageBuilder.AppendLine(ex.Message);
                 MessageBuilder.AppendLine("\r\n\r\n");
                 MessageBuilder.AppendLine(ex.StackTrace);
@@ -69,7 +76,8 @@ namespace DaanV2.Config {
 
             String Message = MessageBuilder.ToString();
 
-            if (File.Exists(ErrorPath)) {
+            if (File.Exists(ErrorPath))
+            {
                 File.Delete(ErrorPath);
             }
 

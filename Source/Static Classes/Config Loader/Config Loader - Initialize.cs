@@ -20,23 +20,28 @@ using System.Reflection;
 using System.Threading;
 using DaanV2.Config.Serialization;
 
-namespace DaanV2.Config {
+namespace DaanV2.Config
+{
     /// <summary>The static class responsible for serializing/deserializing object into the files</summary>
-    public static partial class ConfigLoader {
+    public static partial class ConfigLoader
+    {
         /// <summary>Initializes the instance of <see cref="ConfigLoader"/></summary>
-        static ConfigLoader() {
+        static ConfigLoader()
+        {
             ConfigLoader._Locks = new EventWaitHandle[ConfigOptions.LockCount];
             ConfigLoader._Factories = new ConcurrentDictionary<String, IConfigSerializerFactory>();
             Int32 Count = ConfigLoader._Locks.Length;
 
-            for (Int32 I = 0; I < Count; I++) {
+            for (Int32 I = 0; I < Count; I++)
+            {
                 ConfigLoader._Locks[I] = new AutoResetEvent(true);
             }
 
             Assembly[] Assemblies = AppDomain.CurrentDomain.GetAssemblies();
             Count = Assemblies.Length;
 
-            for (Int32 I = 0; I < Count; I++) {
+            for (Int32 I = 0; I < Count; I++)
+            {
                 ConfigLoader.AddFactories(Assemblies[I]);
             }
 

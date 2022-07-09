@@ -15,11 +15,14 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
-namespace DaanV2.Config.Serialization {
+namespace DaanV2.Config.Serialization
+{
     /// <summary>The class that is reponsible for creating serializers/deserializers</summary>
-    public partial class XmlSerializerFactory {
+    public partial class XmlSerializerFactory
+    {
         /// <summary>Creates a new instance of <see cref="XmlSerializerFactory"/></summary>
-        public XmlSerializerFactory() {
+        public XmlSerializerFactory()
+        {
 
         }
     }

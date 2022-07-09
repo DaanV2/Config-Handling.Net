@@ -6,18 +6,22 @@ using System.Text;
 using System.Threading.Tasks;
 using DaanV2.Config;
 
-namespace Config.Test {
+namespace Config.Test
+{
     [Config("Fake Config", "Somepath\\Hello")]
-    public partial class FakeConfig : INewConfig {
+    public partial class FakeConfig : INewConfig
+    {
 
         [DataMember]
         public Boolean Test { get; set; }
 
-        public void SetNewInformation() {
+        public void SetNewInformation()
+        {
             this.Test = true;
         }
 
-        public FakeConfig() {
+        public FakeConfig()
+        {
             this.Test = false;
         }
     }

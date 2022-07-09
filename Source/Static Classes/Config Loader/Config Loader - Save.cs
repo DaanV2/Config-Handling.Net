@@ -19,8 +19,10 @@ using System.IO;
 using System.Threading;
 using DaanV2.Config.Serialization;
 
-namespace DaanV2.Config {
-    public static partial class ConfigLoader {
+namespace DaanV2.Config
+{
+    public static partial class ConfigLoader
+    {
         /// <summary>Save the given object into a file</summary>
         /// <param name="ConfigObject">The object to save</param>
         /// <param name="Filename">The filename the objects should get</param>
@@ -35,7 +37,8 @@ namespace DaanV2.Config {
         /// <exception cref="PathTooLongException" />
         /// <exception cref="UnauthorizedAccessException" />
         /// <exception cref="System.Security.SecurityException" />
-        public static void SaveConfig(Object ConfigObject, String Filename) {
+        public static void SaveConfig(Object ConfigObject, String Filename)
+        {
             //Get file info on the file to save to
             String Filepath = ConfigOptions.ConfigFolder + Filename + ConfigOptions.ConfigExtension;
             var FI = new FileInfo(Filepath);
@@ -45,7 +48,8 @@ namespace DaanV2.Config {
             DirectoryInfo DI = FI.Directory;
 
             //Create if missing
-            if (!DI.Exists) {
+            if (!DI.Exists)
+            {
                 DI.Create();
             }
 

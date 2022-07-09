@@ -14,11 +14,14 @@ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 
-namespace DaanV2.Config {
+namespace DaanV2.Config
+{
     ///<summary>A class that handles the config property and making sure it sets the value</summary>
-    public abstract partial class BaseConfig<ConfigType> {
+    public abstract partial class BaseConfig<ConfigType>
+    {
         /// <summary>Creates a new instance of <see cref="BaseConfig{ConfigType}"/></summary>
-        public BaseConfig() {
+        public BaseConfig()
+        {
             this.Config = ConfigMapper.Get<ConfigType>();
         }
     }

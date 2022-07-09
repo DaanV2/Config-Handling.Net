@@ -24,12 +24,15 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization.Json;
 #endif
 
-namespace DaanV2.Config.Serialization {
-    public partial class JSONSerializer<T> : IConfigDeserializer<T> {
+namespace DaanV2.Config.Serialization
+{
+    public partial class JSONSerializer<T> : IConfigDeserializer<T>
+    {
         /// <summary>Deserializes the given stream into the specified object</summary>
         /// <param name="Reader">The stream to reader from</param>
         /// <returns>Deserializes the given stream into the specified object</returns>
-        public T Deserialize(Stream Reader) {
+        public T Deserialize(Stream Reader)
+        {
 #if NETCORE
             var Options = new JsonSerializerOptions();
             ValueTask<Object> VTask = JsonSerializer.DeserializeAsync(Reader, this._ForType, Options);

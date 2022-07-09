@@ -15,11 +15,14 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System.Runtime.Serialization;
 
-namespace DaanV2.Config {
-    public abstract partial class BaseConfig<ConfigType> {
+namespace DaanV2.Config
+{
+    public abstract partial class BaseConfig<ConfigType>
+    {
         /// <summary>Gets or sets the config object</summary>
         [DataMember]
-        public ConfigType Config {
+        public ConfigType Config
+        {
             get => this._Config;
             set => this._Config = value;
         }

@@ -23,8 +23,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using DaanV2.Config.Serialization;
 
-namespace DaanV2.Config {
-    public static partial class ConfigLoader {
+namespace DaanV2.Config
+{
+    public static partial class ConfigLoader
+    {
         /// <summary>Loads the specified object from file storage or creates a new instance</summary>
         /// <param name="T">The type of the object to retrieve</param>
         /// <param name="Filename">the name of the config</param>
@@ -46,14 +48,16 @@ namespace DaanV2.Config {
         /// <exception cref="UnauthorizedAccessException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="TypeLoadException" />
-        public static Object LoadConfig(Type T, String Filename) {
+        public static Object LoadConfig(Type T, String Filename)
+        {
             //Create the filepath of where the config file could be found
             String Filepath = ConfigOptions.ConfigFolder + Filename + ConfigOptions.ConfigExtension;
             EventWaitHandle Lock = ConfigLoader.GetLock(Filepath);
             Object Out = null;
 
             //Check if file exists
-            if (File.Exists(Filepath)) {
+            if (File.Exists(Filepath))
+            {
                 //Setup
                 IConfigDeserializer<Object> deserializer;
                 FileStream reader = null;
@@ -84,12 +88,14 @@ namespace DaanV2.Config {
             }
 
             //Checks if object has not been succesfully been deserialized.
-            if (Out == null) {
+            if (Out == null)
+            {
                 //Create new instance of the object
                 Out = Activator.CreateInstance(T);
 
                 //Check if the object has the given object
-                if (Out.GetType().GetInterface(nameof(INewConfig)) != null) {
+                if (Out.GetType().GetInterface(nameof(INewConfig)) != null)
+                {
                     var Temp = (INewConfig)Out;
                     Temp.SetNewInformation();
                 }
@@ -125,12 +131,14 @@ namespace DaanV2.Config {
         /// <exception cref="UnauthorizedAccessException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="TypeLoadException" />
-        public static T LoadConfig<T>(String Filename) {
+        public static T LoadConfig<T>(String Filename)
+        {
             String Filepath = ConfigOptions.ConfigFolder + Filename + ".xml";
             EventWaitHandle Lock = ConfigLoader.GetLock(Filepath);
             T Out = default;
 
-            if (File.Exists(Filepath)) {
+            if (File.Exists(Filepath))
+            {
                 IConfigDeserializer<T> deserializer;
                 FileStream reader = null;
 
@@ -156,10 +164,12 @@ namespace DaanV2.Config {
                 Lock.Set();
             }
 
-            if (Out == null) {
+            if (Out == null)
+            {
                 Out = Activator.CreateInstance<T>();
 
-                if (Out.GetType().GetInterface(nameof(INewConfig)) != null) {
+                if (Out.GetType().GetInterface(nameof(INewConfig)) != null)
+                {
                     var Temp = (INewConfig)Out;
                     Temp.SetNewInformation();
                 }
