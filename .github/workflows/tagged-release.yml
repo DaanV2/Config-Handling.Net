@@ -1,0 +1,45 @@
+name: Tagged Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  tagged-release:
+    name: "Tagged Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: "marvinpinto/action-automatic-releases@latest"        
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          
+      - uses: actions/checkout@v3
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version:|
+            6.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore -c Release
+
+      - name: Test
+        continue-on-error: true
+        run: dotnet format
+
+      - name: Commit changes
+        continue-on-error: true
+        run: |
+          cd $GITHUB_WORKSPACE
+          git config user.name format-bot
+          git config user.email bot@DaanV2.com
+          git add .
+          git commit -m "auto: Generated markdown indexes pages"
+          git push
