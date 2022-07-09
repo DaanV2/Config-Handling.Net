@@ -55,10 +55,6 @@
     <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\NetCore3.0\ConfigHandling.Net.xml</DocumentationFile>
   </PropertyGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="set Framework=netcoreapp3.0&#xD;&#xA;if '$(ConfigurationName)' == 'Release' (&#xD;&#xA;    mkdir &quot;$(SolutionDir)Nuget\assemblies\%25Framework%25-$(PlatformName)\&quot;&#xD;&#xA;    copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Nuget\assemblies\%25Framework%25-$(PlatformName)\&quot;&#xD;&#xA;)" />
-  </Target>
-
   <Import Project="..\..\Source\Source.projitems" Label="Shared" />
 
 </Project>

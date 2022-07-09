@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>Net6.0</TargetFramework>
     <RootNamespace>DaanV2.Config</RootNamespace>
     <AssemblyName>ConfigHandling.Net</AssemblyName>
     <Platforms>AnyCPU;x86;x64</Platforms>
@@ -17,39 +17,39 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;NETCORE;NET5</DefineConstants>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net5.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DefineConstants>TRACE;NETCORE;NET6</DefineConstants>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net6.0\ConfigHandling.Net.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <DefineConstants>TRACE;NETCORE;NET5</DefineConstants>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net5.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DefineConstants>TRACE;NETCORE;Net6</DefineConstants>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net6.0\ConfigHandling.Net.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <DefineConstants>TRACE;NETCORE;NET5</DefineConstants>
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net5.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DefineConstants>TRACE;NETCORE;Net6</DefineConstants>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net6.0\ConfigHandling.Net.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net5.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net6.0\ConfigHandling.Net.xml</DocumentationFile>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DefineConstants>TRACE;NETCORE;NET5</DefineConstants>
+    <DefineConstants>TRACE;NETCORE;Net6</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net5.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net6.0\ConfigHandling.Net.xml</DocumentationFile>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DefineConstants>TRACE;NETCORE;NET5</DefineConstants>
+    <DefineConstants>TRACE;NETCORE;Net6</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net5.0\ConfigHandling.Net.xml</DocumentationFile>
+    <DocumentationFile>D:\Mijn Projecten\Software\Git Hub\Config-Handling.Net\API\Net6.0\ConfigHandling.Net.xml</DocumentationFile>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DefineConstants>TRACE;NETCORE;NET5</DefineConstants>
+    <DefineConstants>TRACE;NETCORE;Net6</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

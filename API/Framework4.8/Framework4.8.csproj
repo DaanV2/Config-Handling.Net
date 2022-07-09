@@ -91,11 +91,4 @@
   </ItemGroup>
   <Import Project="..\..\Source\Source.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>set Framework=net48
-if '$(ConfigurationName)' == 'Release' (
-    mkdir "$(SolutionDir)Nuget\assemblies\%25Framework%25-$(PlatformName)\"
-    copy "$(TargetDir)*" "$(SolutionDir)Nuget\assemblies\%25Framework%25-$(PlatformName)\"
-)</PostBuildEvent>
-  </PropertyGroup>
 </Project>
