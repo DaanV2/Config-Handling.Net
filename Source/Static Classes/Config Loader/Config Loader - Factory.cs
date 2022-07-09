@@ -18,26 +18,33 @@ using System;
 using System.Reflection;
 using DaanV2.Config.Serialization;
 
-namespace DaanV2.Config {
+namespace DaanV2.Config
+{
 
-    public static partial class ConfigLoader {
+    public static partial class ConfigLoader
+    {
 
         /// <summary>Reflects upong the given assemblies to load in specified factories to load into memory</summary>
         /// <param name="assembly">The assembly to reflect upon</param>
-        public static void AddFactories(Assembly assembly) {
-            try {
+        public static void AddFactories(Assembly assembly)
+        {
+            try
+            {
                 Type[] Types = assembly.GetTypes();
                 Type T;
 
-                for (Int32 I = 0; I < Types.Length; I++) {
+                for (Int32 I = 0; I < Types.Length; I++)
+                {
                     T = Types[I];
 
-                    if (T.GetInterface(nameof(IConfigSerializerFactory)) != null) {
+                    if (T.GetInterface(nameof(IConfigSerializerFactory)) != null)
+                    {
                         AddFactory((IConfigSerializerFactory)Activator.CreateInstance(T));
                     }
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex.Message);
             }
         }
@@ -45,9 +52,11 @@ namespace DaanV2.Config {
         /// <summary>Adds the given factory to the internal list</summary>
         /// <param name="Factory">The factory to add, cannot be null</param>
         /// <exception cref="ArgumentNullException" />
-        public static void AddFactory(IConfigSerializerFactory Factory) {
+        public static void AddFactory(IConfigSerializerFactory Factory)
+        {
 
-            if (Factory == null) {
+            if (Factory == null)
+            {
                 throw new ArgumentNullException(nameof(Factory));
             }
 
@@ -55,13 +64,16 @@ namespace DaanV2.Config {
         }
 
         /// <summary>Switches the current serializing factory to the specified factory in config options</summary>
-        public static void SwitchFactory() {
+        public static void SwitchFactory()
+        {
             String Key = ConfigOptions.ConfigSerializerName;
 
-            if (ConfigLoader._Factories.ContainsKey(Key)) {
+            if (ConfigLoader._Factories.ContainsKey(Key))
+            {
                 ConfigLoader._SerializerFactory = ConfigLoader._Factories[Key];
             }
-            else if (ConfigLoader._SerializerFactory == null) {
+            else if (ConfigLoader._SerializerFactory == null)
+            {
                 ConfigLoader._SerializerFactory = new XmlSerializerFactory();
             }
 

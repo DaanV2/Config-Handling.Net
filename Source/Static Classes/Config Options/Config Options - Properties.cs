@@ -16,36 +16,43 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
-namespace DaanV2.Config {
-    public static partial class ConfigOptions {
+namespace DaanV2.Config
+{
+    public static partial class ConfigOptions
+    {
         /// <summary>The path where values of this class are saved</summary>
-        private static String FilepathOptions {
+        private static String FilepathOptions
+        {
             get => _FilepathOptions;
             set => _FilepathOptions = value;
         }
 
         /// <summary>The folder where the configs are stored or loaded from</summary>
-        public static String ConfigFolder {
+        public static String ConfigFolder
+        {
             get => _ConfigFolder;
             set => _ConfigFolder = value;
         }
 
         /// <summary>The extension the config files will receive</summary>
-        public static String ConfigExtension {
+        public static String ConfigExtension
+        {
             get => _ConfigExtension;
             set => _ConfigExtension = value;
         }
 
         /// <summary>The name of the serializing factory</summary>
-        public static String ConfigSerializerName {
+        public static String ConfigSerializerName
+        {
             get => _ConfigSerializerName;
             set => _ConfigSerializerName = value;
         }
 
         /// <summary>The amount of locks used by the config loader</summary>
-        public static Int32 LockCount { 
-            get => _LockCount; 
-            set => _LockCount = value; 
+        public static Int32 LockCount
+        {
+            get => _LockCount;
+            set => _LockCount = value;
         }
     }
 }

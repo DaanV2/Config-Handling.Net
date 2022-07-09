@@ -20,8 +20,10 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace DaanV2.Config {
-    public static partial class ConfigMapper {
+namespace DaanV2.Config
+{
+    public static partial class ConfigMapper
+    {
         /// <summary>Loads a given type from the file</summary>
         /// <param name="T">DOLATER FILL IN</param>
         /// <exception cref="AmbiguousMatchException" />
@@ -42,7 +44,8 @@ namespace DaanV2.Config {
         /// <exception cref="TypeLoadException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="UnauthorizedAccessException" />
-        public static void Load(Type T) {
+        public static void Load(Type T)
+        {
             String Name = GetName(T);
             Object Temp = ConfigLoader.LoadConfig(T, Name);
 
@@ -63,8 +66,10 @@ namespace DaanV2.Config {
         /// <exception cref="PathTooLongException" />
         /// <exception cref="SecurityException" />
         /// <exception cref="UnauthorizedAccessException" />
-        public static void Save(Type T) {
-            if (ConfigMapper._Configs.ContainsKey(T)) {
+        public static void Save(Type T)
+        {
+            if (ConfigMapper._Configs.ContainsKey(T))
+            {
                 ConfigLoader.SaveConfig(_Configs[T], GetName(T));
             }
         }
@@ -82,16 +87,19 @@ namespace DaanV2.Config {
         /// <exception cref="PathTooLongException" />
         /// <exception cref="SecurityException" />
         /// <exception cref="UnauthorizedAccessException" />
-        public static void SaveAll() {
+        public static void SaveAll()
+        {
             var Keys = new Type[ConfigMapper._Configs.Count];
             ConfigMapper._Configs.Keys.CopyTo(Keys, 0);
             Type Key;
             Object Item;
 
-            for (Int32 I = 0; I < Keys.Length; I++) {
+            for (Int32 I = 0; I < Keys.Length; I++)
+            {
                 Key = Keys[I];
 
-                if (ConfigMapper._Configs.ContainsKey(Key)) {
+                if (ConfigMapper._Configs.ContainsKey(Key))
+                {
                     Item = ConfigMapper._Configs[Key];
 
                     ConfigLoader.SaveConfig(Item, GetName(Key));

@@ -16,12 +16,15 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System.IO;
 
-namespace DaanV2.Config.Serialization {
-    public partial class XmlSerializer<T> : IConfigSerializer<T> {
+namespace DaanV2.Config.Serialization
+{
+    public partial class XmlSerializer<T> : IConfigSerializer<T>
+    {
         /// <summary>Serializes the given object into the given stream</summary>
         /// <param name="O">The object to serialize</param>
         /// <param name="Writer">The stream to write to</param>
-        public void Serialize(T O, Stream Writer) {
+        public void Serialize(T O, Stream Writer)
+        {
             base.Serialize(Writer, O);
         }
     }

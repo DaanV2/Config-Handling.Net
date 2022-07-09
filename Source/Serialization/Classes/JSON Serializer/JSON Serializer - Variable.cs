@@ -16,8 +16,10 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
-namespace DaanV2.Config.Serialization {
-    public partial class JSONSerializer<T> {
+namespace DaanV2.Config.Serialization
+{
+    public partial class JSONSerializer<T>
+    {
         /// <summary>Gets or sets the type used to serialize</summary>
         private readonly Type _ForType;
     }

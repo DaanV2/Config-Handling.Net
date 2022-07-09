@@ -19,8 +19,10 @@ using System.Collections.Concurrent;
 using System.Threading;
 using DaanV2.Config.Serialization;
 
-namespace DaanV2.Config {
-    public static partial class ConfigLoader {
+namespace DaanV2.Config
+{
+    public static partial class ConfigLoader
+    {
         /// <summary>The locks used for to make sure config files can only be accesed by 1 thread at a time</summary>
         private static readonly EventWaitHandle[] _Locks;
 

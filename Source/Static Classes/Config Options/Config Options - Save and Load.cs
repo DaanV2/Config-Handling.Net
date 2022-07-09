@@ -17,10 +17,13 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.IO;
 
-namespace DaanV2.Config {
-    public static partial class ConfigOptions {
+namespace DaanV2.Config
+{
+    public static partial class ConfigOptions
+    {
         /// <summary>Save this class into the config.ini file</summary>
-        public static void Save() {
+        public static void Save()
+        {
             //Write the config file
             var FI = new FileInfo(FilepathOptions);
 
@@ -36,15 +39,18 @@ namespace DaanV2.Config {
         }
 
         /// <summary>Loads the config.ini file</summary>
-        public static void Load() {
+        public static void Load()
+        {
             //Retrieve all lines from the config
             String[] Lines = File.ReadAllLines(ConfigOptions._FilepathOptions);
 
             //Loop through all lines
-            foreach (String L in Lines) {
+            foreach (String L in Lines)
+            {
                 Int32 I = L.IndexOf("=");
 
-                if (I < 0) {
+                if (I < 0)
+                {
                     continue;
                 }
 
@@ -55,7 +61,8 @@ namespace DaanV2.Config {
                 String Value = L.Substring(I + 1, L.Length - (I + 1)).Trim();
 #endif
 
-                switch (Name) {
+                switch (Name)
+                {
                     case "Config Extension":
                         ConfigOptions._ConfigExtension = Value;
                         break;
@@ -69,7 +76,8 @@ namespace DaanV2.Config {
                         break;
 
                     case "Lock Count":
-                        if (Int32.TryParse(Value, out Int32 Out)) {
+                        if (Int32.TryParse(Value, out Int32 Out))
+                        {
                             ConfigOptions._LockCount = Out;
                         }
                         break;
@@ -77,19 +85,22 @@ namespace DaanV2.Config {
             }
 
             //Relative path
-            if (ConfigOptions._ConfigFolder.StartsWith("\\")) {
+            if (ConfigOptions._ConfigFolder.StartsWith("\\"))
+            {
                 ConfigOptions._ConfigFolder = AppDomain.CurrentDomain.BaseDirectory.TrimEnd('\\') + ConfigOptions._ConfigFolder;
             }
 
             //Make sure it ends with '\'
-            if (!ConfigOptions._ConfigFolder.EndsWith("\\")) {
+            if (!ConfigOptions._ConfigFolder.EndsWith("\\"))
+            {
                 ConfigOptions._ConfigFolder += "\\";
             }
         }
 
         /// <summary>checks if the config.ini file exists</summary>
         /// <returns>Returns a <see cref="Boolean"/></returns>
-        private static Boolean HasFile() {
+        private static Boolean HasFile()
+        {
             return File.Exists(ConfigOptions._FilepathOptions);
         }
     }

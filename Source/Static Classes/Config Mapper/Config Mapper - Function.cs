@@ -18,14 +18,18 @@ using System;
 using System.Reflection;
 using System.Text;
 
-namespace DaanV2.Config {
-    public static partial class ConfigMapper {
+namespace DaanV2.Config
+{
+    public static partial class ConfigMapper
+    {
 
         /// <summary>Remove the config from the internal list</summary>
         /// <param name="T">DOLATER FILL IN</param>
         /// <exception cref="ArgumentNullException" />
-        public static void Remove(Type T) {
-            if (ConfigMapper.Configs.ContainsKey(T)) {
+        public static void Remove(Type T)
+        {
+            if (ConfigMapper.Configs.ContainsKey(T))
+            {
                 ConfigMapper._Configs.TryRemove(T, out _);
             }
         }
@@ -33,16 +37,20 @@ namespace DaanV2.Config {
         /// <summary>Remove the config from the internal list</summary>
         /// <param name="T">DOLATER FILL IN</param>
         /// <exception cref="ArgumentNullException" />
-        public static void Remove(Object T) {
-            if (ConfigMapper._Configs.ContainsKey(T.GetType())) {
+        public static void Remove(Object T)
+        {
+            if (ConfigMapper._Configs.ContainsKey(T.GetType()))
+            {
                 ConfigMapper._Configs.TryRemove(T.GetType(), out _);
             }
         }
 
         /// <summary>Clears the complete internal list</summary>
         /// <param name="SaveConfigs">DOLATER FILL IN</param>
-        public static void Clear(Boolean SaveConfigs = false) {
-            if (SaveConfigs) {
+        public static void Clear(Boolean SaveConfigs = false)
+        {
+            if (SaveConfigs)
+            {
                 ConfigMapper.SaveAll();
             }
 
@@ -57,8 +65,10 @@ namespace DaanV2.Config {
         /// <exception cref="ArgumentNullException" />
         /// <exception cref="NotSupportedException" />
         /// <exception cref="TypeLoadException" />
-        public static String GetName(Type T) {
-            if (T == null) {
+        public static String GetName(Type T)
+        {
+            if (T == null)
+            {
                 throw new ArgumentNullException(nameof(T));
             }
 
@@ -66,8 +76,10 @@ namespace DaanV2.Config {
             var Ca = (ConfigAttribute)Attribute.GetCustomAttribute(T, typeof(ConfigAttribute));
             String Out = String.Empty;
 
-            if (Ca == null || (Ca.SubFolder == null && Ca.Name == null)) {
-                if (T.IsGenericType) {
+            if (Ca == null || (Ca.SubFolder == null && Ca.Name == null))
+            {
+                if (T.IsGenericType)
+                {
                     Type[] Types = T.GetGenericArguments();
                     var B = new StringBuilder(Types.Length * 20);
 
@@ -75,24 +87,28 @@ namespace DaanV2.Config {
                     B.Append(T.Name.Replace("`", "-"));
 
                     //Append any generic arguments
-                    for (Int32 I = 0; I < Types.Length; I++) {
+                    for (Int32 I = 0; I < Types.Length; I++)
+                    {
                         B.Append('_');
                         B.Append(GetName(Types[I]));
                     }
 
                     return B.ToString();
                 }
-                else {
+                else
+                {
                     return T.Name;
                 }
             }
 
             //If category is filled in then make put category in Out
-            if (!(Ca.SubFolder == null || Ca.SubFolder == String.Empty)) {
+            if (!(Ca.SubFolder == null || Ca.SubFolder == String.Empty))
+            {
                 Out = Ca.SubFolder;
 
                 //Make sure out is ending with \
-                if (!Out.EndsWith("\\")) {
+                if (!Out.EndsWith("\\"))
+                {
                     Out += "\\";
                 }
             }

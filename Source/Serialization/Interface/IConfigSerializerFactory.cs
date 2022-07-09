@@ -16,9 +16,11 @@ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 
-namespace DaanV2.Config.Serialization {
+namespace DaanV2.Config.Serialization
+{
     /// <summary>A interface that is responisble for dictating how a serializing factory should behave</summary>
-    public interface IConfigSerializerFactory {
+    public interface IConfigSerializerFactory
+    {
 
         /// <summary>Returns a serializer that is capable of deserializing the given object type</summary>
         /// <typeparam name="TOut">The object type to deserialize</typeparam>

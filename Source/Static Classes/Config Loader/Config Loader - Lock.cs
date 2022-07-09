@@ -17,12 +17,15 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Threading;
 
-namespace DaanV2.Config {
-    public static partial class ConfigLoader {
+namespace DaanV2.Config
+{
+    public static partial class ConfigLoader
+    {
         /// <summary>Returns a lock that is assigned to the specified filepath</summary>
         /// <param name="Filepath">The filepath to return a lock for</param>
         /// <returns>Returns a lock that is assigned to the specified filepath</returns>
-        private static EventWaitHandle GetLock(String Filepath) {
+        private static EventWaitHandle GetLock(String Filepath)
+        {
             Int32 Index = Math.Abs(Filepath.GetHashCode()) % ConfigLoader._Locks.Length;
             return ConfigLoader._Locks[Index];
         }

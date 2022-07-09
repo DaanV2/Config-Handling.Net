@@ -24,12 +24,15 @@ using System.Runtime.Serialization.Json;
 #endif
 
 
-namespace DaanV2.Config.Serialization {
-    public partial class JSONSerializer<T> : IConfigSerializer<T> {
+namespace DaanV2.Config.Serialization
+{
+    public partial class JSONSerializer<T> : IConfigSerializer<T>
+    {
         /// <summary>Serializes the given object into the given stream</summary>
         /// <param name="O">The given object to serialize</param>
         /// <param name="Writer">The given stream to write in</param>
-        public void Serialize(T O, Stream Writer) {
+        public void Serialize(T O, Stream Writer)
+        {
 #if NETCORE
             var Options = new JsonSerializerOptions();
             JsonSerializer.Serialize(new Utf8JsonWriter(Writer), O, this._ForType, Options);

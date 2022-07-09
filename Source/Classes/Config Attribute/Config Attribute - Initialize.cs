@@ -16,11 +16,13 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.*/
 using System;
 using System.Runtime.Serialization;
 
-namespace DaanV2.Config {
+namespace DaanV2.Config
+{
     /// <summary>The attribute responsible for giving the system its information</summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Struct, AllowMultiple = false, Inherited = false)]
     [Serializable, DataContract]
-    public partial class ConfigAttribute : Attribute {
+    public partial class ConfigAttribute : Attribute
+    {
         /// <summary>Creates a new instance of <see cref="ConfigAttribute"/></summary>
         public ConfigAttribute() : this(String.Empty, String.Empty, String.Empty) { }
 
@@ -40,7 +42,8 @@ namespace DaanV2.Config {
         /// <param name="Category">The catergory this config objects fall under, use \ for sub categories</param>
         /// <param name="SubFolder">The subfolder the config loader needs to save/load from. 
         /// relative fromt the config folder, use \ to create even deeper folder structures</param>
-        public ConfigAttribute(String Name, String Category, String SubFolder) {
+        public ConfigAttribute(String Name, String Category, String SubFolder)
+        {
             this.Category = Category;
             this.Name = Name;
             this.SubFolder = SubFolder;

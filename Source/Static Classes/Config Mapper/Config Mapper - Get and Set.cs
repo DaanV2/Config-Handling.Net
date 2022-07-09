@@ -20,14 +20,17 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace DaanV2.Config {
-    public static partial class ConfigMapper {
+namespace DaanV2.Config
+{
+    public static partial class ConfigMapper
+    {
         /// <summary>Sets the given config under the given key</summary>
         /// <param name="Key">The key to set the config under, use the configs own type! but this function allows to bypass that</param>
         /// <param name="ConfigObject">The config object to set under the given key</param>
         /// <exception cref="ArgumentException" />
         /// <exception cref="ArgumentNullException" />
-        public static void Set(Type Key, Object ConfigObject) {
+        public static void Set(Type Key, Object ConfigObject)
+        {
             ConfigMapper._Configs[Key] = ConfigObject;
         }
 
@@ -35,7 +38,8 @@ namespace DaanV2.Config {
         /// <param name="ConfigObject">DOLATER FILL IN</param>
         /// <exception cref="ArgumentException" />
         /// <exception cref="ArgumentNullException" />
-        public static void Set(Object ConfigObject) {
+        public static void Set(Object ConfigObject)
+        {
             Type T = ConfigObject.GetType();
 
             ConfigMapper._Configs[T] = ConfigObject;
@@ -62,8 +66,10 @@ namespace DaanV2.Config {
         /// <exception cref="TypeLoadException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="UnauthorizedAccessException" />
-        public static Object Get(Type T) {
-            if (!ConfigMapper._Configs.ContainsKey(T)) {
+        public static Object Get(Type T)
+        {
+            if (!ConfigMapper._Configs.ContainsKey(T))
+            {
                 Load(T);
             }
 
@@ -91,10 +97,12 @@ namespace DaanV2.Config {
         /// <exception cref="TypeLoadException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="UnauthorizedAccessException" />
-        public static T Get<T>() {
+        public static T Get<T>()
+        {
             Type Temp = typeof(T);
 
-            if (!ConfigMapper._Configs.ContainsKey(Temp)) {
+            if (!ConfigMapper._Configs.ContainsKey(Temp))
+            {
                 Load(Temp);
             }
 
@@ -123,9 +131,12 @@ namespace DaanV2.Config {
         /// <exception cref="TypeLoadException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="UnauthorizedAccessException" />
-        public static Object Get(Type T, Boolean PresistObject) {
-            if (PresistObject) {
-                if (!ConfigMapper._Configs.ContainsKey(T)) {
+        public static Object Get(Type T, Boolean PresistObject)
+        {
+            if (PresistObject)
+            {
+                if (!ConfigMapper._Configs.ContainsKey(T))
+                {
                     Load(T);
                 }
 
@@ -158,11 +169,14 @@ namespace DaanV2.Config {
         /// <exception cref="TypeLoadException" />
         /// <exception cref="TargetInvocationException" />
         /// <exception cref="UnauthorizedAccessException" />
-        public static T Get<T>(Boolean PresistObject) {            
+        public static T Get<T>(Boolean PresistObject)
+        {
             Type Temp = typeof(T);
 
-            if (PresistObject) {
-                if (!ConfigMapper._Configs.ContainsKey(Temp)) {
+            if (PresistObject)
+            {
+                if (!ConfigMapper._Configs.ContainsKey(Temp))
+                {
                     Load(Temp);
                 }
 
