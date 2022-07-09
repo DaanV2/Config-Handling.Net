@@ -21,7 +21,6 @@
         <dependencies>
             <group targetFramework=".NET5.0" />
             <group targetFramework=".NET6.0" />
-            <group targetFramework=".NETCoreApp3.0" />
             <group targetFramework=".NETCoreApp3.1" />
             <group targetFramework=".NETFramework4.8" />
             <group targetFramework=".NETStandard2.0" />
@@ -40,7 +39,6 @@
         <file src="API\Framework4.8\bin\Release\*.*" target="lib\net48" exclude="*.tmp;*.pdb"/>
         <file src="API\Net5.0\bin\Release\net5.0\*.*" target="lib\net5.0" exclude="*.tmp;*.pdb"/>
         <file src="API\Net6.0\bin\Release\net6.0\*.*" target="lib\net6.0" exclude="*.tmp;*.pdb"/>
-        <file src="API\NetCore3.0\bin\Release\netcoreapp3.0\*.*" target="lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
         <file src="API\NetCore3.1\bin\Release\netcoreapp3.1\*.*" target="lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
         <file src="API\Standard2.0\bin\Release\netstandard2.0\*.*" target="lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
         <file src="API\Standard2.1\bin\Release\netstandard2.1\*.*" target="lib\netstandard2.1" exclude="*.tmp;*.pdb"/>
