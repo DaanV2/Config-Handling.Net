@@ -9,18 +9,20 @@
         <title>Config-Handling.Net</title>
 
         <!-- Optional elements -->
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <copyright>Daan Verstraten 2018</copyright>
+        <icon>images\icon.png</icon>
         <license type="file">LICENSE.txt</license>
         <projectUrl>https://github.com/DaanV2/Config-Handling.Net</projectUrl>
-        <copyright>Daan Verstraten 2018</copyright>
-        <tags>config config-management</tags>
-        <repository type="git" url="https://github.com/DaanV2/Config-Handling.Net" />
+        <readme>docs\README.md</readme>
         <releaseNotes>Fixing config.ini</releaseNotes>
-        <icon>images\icon.png</icon>
+        <repository type="git" url="https://github.com/DaanV2/Config-Handling.Net" />
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <tags>config config-management</tags>
         <dependencies>
-            <group targetFramework=".NETCoreApp3.1" />
-            <group targetFramework=".NETCore5.0" />
+            <group targetFramework=".NET5.0" />
             <group targetFramework=".NET6.0" />
+            <group targetFramework=".NETCoreApp3.0" />
+            <group targetFramework=".NETCoreApp3.1" />
             <group targetFramework=".NETFramework4.8" />
             <group targetFramework=".NETStandard2.0" />
             <group targetFramework=".NETStandard2.1" />
@@ -32,11 +34,12 @@
     <files>
         <file src=".\Nuget\images\icon.png" target="images\" />
         <file src=".\LICENSE.txt" target="" />
+        <file src=".\README.md" target="docs\" />
 
         <!-- Any CPU -->
         <file src="API\Framework4.8\bin\Release\*.*" target="lib\net48" exclude="*.tmp;*.pdb"/>
-        <file src="API\Net5.0\bin\Release\net5.0\*.*" target="lib\netcore50" exclude="*.tmp;*.pdb"/>
-        <file src="API\Net6.0\bin\Release\net6.0\*.*" target="lib\netcore60" exclude="*.tmp;*.pdb"/>
+        <file src="API\Net5.0\bin\Release\net5.0\*.*" target="lib\net5.0" exclude="*.tmp;*.pdb"/>
+        <file src="API\Net6.0\bin\Release\net6.0\*.*" target="lib\net6.0" exclude="*.tmp;*.pdb"/>
         <file src="API\NetCore3.0\bin\Release\netcoreapp3.0\*.*" target="lib\netcoreapp3.0" exclude="*.tmp;*.pdb"/>
         <file src="API\NetCore3.1\bin\Release\netcoreapp3.1\*.*" target="lib\netcoreapp3.1" exclude="*.tmp;*.pdb"/>
         <file src="API\Standard2.0\bin\Release\netstandard2.0\*.*" target="lib\netstandard2.0" exclude="*.tmp;*.pdb"/>
