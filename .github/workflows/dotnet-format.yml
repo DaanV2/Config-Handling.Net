@@ -6,7 +6,7 @@ on:
   pull_request:
 
 concurrency: 
-  group: ${{ github.workflow }}
+  group: ci-format-${{ github.ref }}
   cancel-in-progress: true
   
 jobs:
