@@ -27,7 +27,7 @@ Config objects are saved in a centralized location.
 
 This library is made to make simple calls to config objects:
 
-```csharp
+```cs
 ExampleConfig Config = ConfigMapper.Get<ExampleConfig>();
 ```
 
